@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>效果文化-合作调研</title>
+    <title>实体店抖音代运营合作调研</title>
     <style>
         * {
             margin: 0;
@@ -270,6 +270,9 @@
             font-weight: 600;
             transition: all 0.3s ease;
             margin: 10px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
         }
 
         .download-btn:hover {
@@ -277,12 +280,65 @@
             transform: translateY(-2px);
         }
 
-        .download-btn.excel {
-            background: #1e7e34;
+        /* 新增样式 - 报告显示区域 */
+        .report-content {
+            margin-top: 30px;
+            display: none;
         }
 
-        .download-btn.excel:hover {
-            background: #155724;
+        .report-section {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: #f8f9ff;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+
+        .report-section h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+
+        .report-item {
+            margin-bottom: 10px;
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .report-item:last-child {
+            border-bottom: none;
+        }
+
+        .report-label {
+            font-weight: 600;
+            color: #555;
+            display: inline-block;
+            min-width: 120px;
+        }
+
+        .report-value {
+            color: #333;
+        }
+
+        .copy-notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #27ae60;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            z-index: 1000;
+            opacity: 0;
+            transform: translateX(100px);
+            transition: all 0.3s ease;
+        }
+
+        .copy-notification.show {
+            opacity: 1;
+            transform: translateX(0);
         }
 
         @media (max-width: 768px) {
@@ -308,7 +364,7 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>🏪 效果文化-合作调研</h1>
+            <h1>🏪 实体店抖音代运营合作调研</h1>
             <p>店铺运营 + 个人IP打造双重策略</p>
         </div>
 
@@ -719,980 +775,792 @@
                             </div>
                         </div>
                         <div class="other-input" id="langOtherInput">
-                <input type="text" name="languageStyleOther" placeholder="请说明其他语言特点..."> 
-</div> 
-</div>
-                <div class="form-group">
-                    <label for="catchphrase">有没有口头禅或常用语？</label>
-                    <input type="text" id="catchphrase" name="catchphrase" placeholder="例：没问题、放心吧...">
+                            <input type="text" name="languageStyleOther" placeholder="请说明其他语言特点...">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="catchphrase">有没有口头禅或常用语？</label>
+                        <input type="text" id="catchphrase" name="catchphrase" placeholder="例：没问题、放心吧...">
+                    </div>
                 </div>
+
+                <!-- 第五部分：创业故事 -->
+                <div class="section">
+                    <h2 class="section-title">📖 创业故事</h2>
+                    
+                    <div class="form-group">
+                        <label for="whyStartBusiness">为什么会开这家店？有什么特殊的契机吗？</label>
+                        <textarea id="whyStartBusiness" name="whyStartBusiness" placeholder="请分享您的创业故事..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="memorableEvent">创业过程中最难忘的事情</label>
+                        <textarea id="memorableEvent" name="memorableEvent" placeholder="请描述一个让您印象深刻的经历..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="proudMoment">最有成就感的时刻</label>
+                        <textarea id="proudMoment" name="proudMoment" placeholder="请分享您最自豪的时刻..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="difficultTime">最困难的时候是怎么坚持下来的？</label>
+                        <textarea id="difficultTime" name="difficultTime" placeholder="请分享您克服困难的经历..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="customerStory">有没有特别印象深刻的客户？</label>
+                        <textarea id="customerStory" name="customerStory" placeholder="请分享一个客户故事..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="familySupport">家人对您事业的态度</label>
+                        <div class="radio-group">
+                            <div class="radio-item">
+                                <input type="radio" id="support1" name="familySupport" value="非常支持">
+                                <label for="support1">非常支持</label>
+                            </div>
+                            <div class="radio-item">
+                                <input type="radio" id="support2" name="familySupport" value="一般支持">
+                                <label for="support2">一般支持</label>
+                            </div>
+                            <div class="radio-item">
+                                <input type="radio" id="support3" name="familySupport" value="有些担心">
+                                <label for="support3">有些担心</label>
+                            </div>
+                            <div class="radio-item">
+                                <input type="radio" id="support4" name="familySupport" value="不太支持">
+                                <label for="support4">不太支持</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 第六部分：IP定位意向 -->
+                <div class="section">
+                    <h2 class="section-title">🎯 IP定位意向</h2>
+                    
+                    <div class="form-group">
+                        <label>您希望在抖音上给大家什么印象？（可多选）</label>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="image1" name="desiredImage" value="专业的行业专家">
+                                <label for="image1">专业的行业专家</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="image2" name="desiredImage" value="亲切的邻家老板">
+                                <label for="image2">亲切的邻家老板</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="image3" name="desiredImage" value="有趣的生活达人">
+                                <label for="image3">有趣的生活达人</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="image4" name="desiredImage" value="励志的创业者">
+                                <label for="image4">励志的创业者</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="image5" name="desiredImage" value="温暖的服务者">
+                                <label for="image5">温暖的服务者</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="imageOther" name="desiredImage" value="其他" onchange="toggleOtherInput('imageOther', 'imageOtherInput')">
+                                <label for="imageOther">其他</label>
+                            </div>
+                        </div>
+                        <div class="other-input" id="imageOtherInput">
+                            <input type="text" name="desiredImageOther" placeholder="请说明您希望的其他形象...">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>最想传递给观众什么价值？</label>
+                        <div class="radio-group">
+                            <div class="radio-item">
+                                <input type="radio" id="value1" name="valueToDeliver" value="专业知识">
+                                <label for="value1">专业知识</label>
+                            </div>
+                            <div class="radio-item">
+                                <input type="radio" id="value2" name="valueToDeliver" value="生活态度">
+                                <label for="value2">生活态度</label>
+                            </div>
+                            <div class="radio-item">
+                                <input type="radio" id="value3" name="valueToDeliver" value="创业精神">
+                                <label for="value3">创业精神</label>
+                            </div>
+                            <div class="radio-item">
+                                <input type="radio" id="value4" name="valueToDeliver" value="服务理念">
+                                <label for="value4">服务理念</label>
+                            </div>
+                            <div class="radio-item">
+                                <input type="radio" id="value5" name="valueToDeliver" value="产品品质">
+                                <label for="value5">产品品质</label>
+                            </div>
+                            <div class="radio-item">
+                                <input type="radio" id="valueOther" name="valueToDeliver" value="其他" onchange="toggleOtherInput('valueOther', 'valueOtherInput')">
+                                <label for="valueOther">其他</label>
+                            </div>
+                        </div>
+                        <div class="other-input" id="valueOtherInput">
+                            <input type="text" name="valueToDeliverOther" placeholder="请说明您想传递的其他价值...">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>您更愿意分享什么类型的内容？（可多选）</label>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="content1" name="contentPreference" value="工作日常">
+                                <label for="content1">工作日常</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="content2" name="contentPreference" value="产品制作过程">
+                                <label for="content2">产品制作过程</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="content3" name="contentPreference" value="经营心得">
+                                <label for="content3">经营心得</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="content4" name="contentPreference" value="生活感悟">
+                                <label for="content4">生活感悟</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="content5" name="contentPreference" value="客户互动">
+                                <label for="content5">客户互动</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="content6" name="contentPreference" value="行业知识">
+                                <label for="content6">行业知识</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="content7" name="contentPreference" value="家庭生活">
+                                <label for="content7">家庭生活</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="content8" name="contentPreference" value="个人爱好">
+                                <label for="content8">个人爱好</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="contentOther" name="contentPreference" value="其他" onchange="toggleOtherInput('contentOther', 'contentOtherInput')">
+                                <label for="contentOther">其他</label>
+                            </div>
+                        </div>
+                        <div class="other-input" id="contentOtherInput">
+                            <input type="text" name="contentPreferenceOther" placeholder="请说明其他内容类型...">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="avoidContent">有什么绝对不愿意分享的？</label>
+                        <textarea id="avoidContent" name="avoidContent" placeholder="请说明您不希望分享的内容类型..."></textarea>
+                    </div>
+                </div>
+
+                <!-- 第七部分：合作期待 -->
+                <div class="section">
+                    <h2 class="section-title">🤝 合作期待</h2>
+                    
+                    <div class="form-group">
+                        <label>希望通过抖音运营实现什么目标？</label>
+                        <div class="radio-group">
+                            <div class="radio-item">
+                                <input type="radio" id="goal1" name="mainGoal" value="增加店铺知名度">
+                                <label for="goal1">增加店铺知名度</label>
+                            </div>
+                            <div class="radio-item">
+                                <input type="radio" id="goal2" name="mainGoal" value="提升客流量">
+                                <label for="goal2">提升客流量</label>
+                            </div>
+                            <div class="radio-item">
+                                <input type="radio" id="goal3" name="mainGoal" value="增加销售额">
+                                <label for="goal3">增加销售额</label>
+                            </div>
+                            <div class="radio-item">
+                                <input type="radio" id="goal4" name="mainGoal" value="建立私域流量">
+                                <label for="goal4">建立私域流量</label>
+                            </div>
+                            <div class="radio-item">
+                                <input type="radio" id="goal5" name="mainGoal" value="打造个人IP">
+                                <label for="goal5">打造个人IP</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>期待的效果时间</label>
+                        <div class="radio-group">
+                            <div class="radio-item">
+                                <input type="radio" id="time1" name="expectedTime" value="1个月内见效">
+                                <label for="time1">1个月内见效</label>
+                            </div>
+                            <div class="radio-item">
+                                <input type="radio" id="time2" name="expectedTime" value="3个月内见效">
+                                <label for="time2">3个月内见效</label>
+                            </div>
+                            <div class="radio-item">
+                                <input type="radio" id="time3" name="expectedTime" value="6个月内见效">
+                                <label for="time3">6个月内见效</label>
+                            </div>
+                            <div class="radio-item">
+                                <input type="radio" id="time4" name="expectedTime" value="1年内见效">
+                                <label for="time4">1年内见效</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>可接受的投入预算（月）</label>
+                        <div class="radio-group">
+                            <div class="radio-item">
+                                <input type="radio" id="budget1" name="budget" value="3000元以下">
+                                <label for="budget1">3000元以下</label>
+                            </div>
+                            <div class="radio-item">
+                                <input type="radio" id="budget2" name="budget" value="3000-5000元">
+                                <label for="budget2">3000-5000元</label>
+                            </div>
+                            <div class="radio-item">
+                                <input type="radio" id="budget3" name="budget" value="5000-8000元">
+                                <label for="budget3">5000-8000元</label>
+                            </div>
+                            <div class="radio-item">
+                                <input type="radio" id="budget4" name="budget" value="8000-12000元">
+                                <label for="budget4">8000-12000元</label>
+                            </div>
+                            <div class="radio-item">
+                                <input type="radio" id="budget5" name="budget" value="12000元以上">
+                                <label for="budget5">12000元以上</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>您能投入多少时间配合运营？</label>
+                        <div class="radio-group">
+                            <div class="radio-item">
+                                <input type="radio" id="timeInvest1" name="timeInvestment" value="每天1小时以内">
+                                <label for="timeInvest1">每天1小时以内</label>
+                            </div>
+                            <div class="radio-item">
+                                <input type="radio" id="timeInvest2" name="timeInvestment" value="每天1-2小时">
+                                <label for="timeInvest2">每天1-2小时</label>
+                            </div>
+                            <div class="radio-item">
+                                <input type="radio" id="timeInvest3" name="timeInvestment" value="每天2-3小时">
+                                <label for="timeInvest3">每天2-3小时</label>
+                            </div>
+                            <div class="radio-item">
+                                <input type="radio" id="timeInvest4" name="timeInvestment" value="看情况安排">
+                                <label for="timeInvest4">看情况安排</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>愿意出镜拍摄吗？</label>
+                        <div class="radio-group">
+                            <div class="radio-item">
+                                <input type="radio" id="appear1" name="appearanceWillingness" value="非常愿意">
+                                <label for="appear1">非常愿意</label>
+                            </div>
+                            <div class="radio-item">
+                                <input type="radio" id="appear2" name="appearanceWillingness" value="可以尝试">
+                                <label for="appear2">可以尝试</label>
+                            </div>
+                            <div class="radio-item">
+                                <input type="radio" id="appear3" name="appearanceWillingness" value="不太愿意">
+                                <label for="appear3">不太愿意</label>
+                            </div>
+                            <div class="radio-item">
+                                <input type="radio" id="appear4" name="appearanceWillingness" value="坚决不愿意">
+                                <label for="appear4">坚决不愿意</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>愿意在以下场景出镜（可多选）</label>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="scene1" name="filmingScenes" value="店内工作">
+                                <label for="scene1">店内工作</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="scene2" name="filmingScenes" value="产品介绍">
+                                <label for="scene2">产品介绍</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="scene3" name="filmingScenes" value="客户服务">
+                                <label for="scene3">客户服务</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="scene4" name="filmingScenes" value="制作过程">
+                                <label for="scene4">制作过程</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="scene5" name="filmingScenes" value="日常生活">
+                                <label for="scene5">日常生活</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="scene6" name="filmingScenes" value="学习分享">
+                                <label for="scene6">学习分享</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="sceneOther" name="filmingScenes" value="其他" onchange="toggleOtherInput('sceneOther', 'sceneOtherInput')">
+                                <label for="sceneOther">其他</label>
+                            </div>
+                        </div>
+                        <div class="other-input" id="sceneOtherInput">
+                            <input type="text" name="filmingScenesOther" placeholder="请说明其他拍摄场景...">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="weeklyFilmingTime">每周能配合拍摄的时间</label>
+                        <div class="input-with-suffix">
+                            <input type="number" id="weeklyFilmingTime" name="weeklyFilmingTime" min="1" max="50">
+                            <span class="input-suffix">小时</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 第八部分：产品服务特色 -->
+                <div class="section">
+                    <h2 class="section-title">🛍️ 产品/服务特色</h2>
+                    
+                    <div class="form-group">
+                        <label for="mainProducts">请列出3-5个主推产品/服务</label>
+                        <textarea id="mainProducts" name="mainProducts" placeholder="格式：产品名称 - 价格 - 利润率&#10;例如：招牌奶茶 - 15元 - 60%&#10;&#10;1. &#10;2. &#10;3. &#10;4. &#10;5. "></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="suitableProducts">哪些产品最适合线上推广？为什么？</label>
+                        <textarea id="suitableProducts" name="suitableProducts" placeholder="请详细说明产品特点和推广优势..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="uniqueStory">有什么独特的产品故事或制作工艺吗？</label>
+                        <textarea id="uniqueStory" name="uniqueStory" placeholder="请分享您的产品特色、制作工艺或背后的故事..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="marketingExperience">之前做过哪些营销活动？效果如何？</label>
+                        <textarea id="marketingExperience" name="marketingExperience" placeholder="请分享您的营销经验和效果..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>店内有什么特色场景适合拍摄？（可多选）</label>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="shopScene1" name="shopScenes" value="制作过程">
+                                <label for="shopScene1">制作过程</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="shopScene2" name="shopScenes" value="用餐环境">
+                                <label for="shopScene2">用餐环境</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="shopScene3" name="shopScenes" value="产品展示">
+                                <label for="shopScene3">产品展示</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="shopScene4" name="shopScenes" value="服务场景">
+                                <label for="shopScene4">服务场景</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="shopScene5" name="shopScenes" value="装修特色">
+                                <label for="shopScene5">装修特色</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="shopScene6" name="shopScenes" value="团队合作">
+                                <label for="shopScene6">团队合作</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="shopSceneOther" name="shopScenes" value="其他" onchange="toggleOtherInput('shopSceneOther', 'shopSceneOtherInput')">
+                                <label for="shopSceneOther">其他</label>
+                            </div>
+                        </div>
+                        <div class="other-input" id="shopSceneOtherInput">
+                            <input type="text" name="shopScenesOther" placeholder="请说明其他特色场景...">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 第九部分：发展目标 -->
+                <div class="section">
+                    <h2 class="section-title">🎊 发展目标</h2>
+                    
+                    <div class="form-group">
+                        <label for="shortTermGoals">3个月内希望达到的目标</label>
+                        <textarea id="shortTermGoals" name="shortTermGoals" placeholder="请描述您的短期目标，如：&#10;- 粉丝数量：1万&#10;- 月增加客流：100人&#10;- 月增加营业额：2万元&#10;- 其他目标..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="longTermVision">理想中的个人IP状态（1年后）</label>
+                        <textarea id="longTermVision" name="longTermVision" placeholder="请描述您希望达到的长期目标和愿景..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>希望通过个人IP实现什么？（可多选）</label>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="ipGoal1" name="ipGoals" value="店铺生意更好">
+                                <label for="ipGoal1">店铺生意更好</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="ipGoal2" name="ipGoals" value="个人影响力提升">
+                                <label for="ipGoal2">个人影响力提升</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="ipGoal3" name="ipGoals" value="拓展更多商机">
+                                <label for="ipGoal3">拓展更多商机</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="ipGoal4" name="ipGoals" value="帮助更多同行">
+                                <label for="ipGoal4">帮助更多同行</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="ipGoal5" name="ipGoals" value="成为行业专家">
+                                <label for="ipGoal5">成为行业专家</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="ipGoalOther" name="ipGoals" value="其他" onchange="toggleOtherInput('ipGoalOther', 'ipGoalOtherInput')">
+                                <label for="ipGoalOther">其他</label>
+                            </div>
+                        </div>
+                        <div class="other-input" id="ipGoalOtherInput">
+                            <input type="text" name="ipGoalsOther" placeholder="请说明其他目标...">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>最希望哪类人关注您？（可多选）</label>
+                        <div class="checkbox-group">
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="audience1" name="targetAudience" value="潜在客户">
+                                <label for="audience1">潜在客户</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="audience2" name="targetAudience" value="同行业者">
+                                <label for="audience2">同行业者</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="audience3" name="targetAudience" value="本地居民">
+                                <label for="audience3">本地居民</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="audience4" name="targetAudience" value="全国网友">
+                                <label for="audience4">全国网友</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="audience5" name="targetAudience" value="年轻创业者">
+                                <label for="audience5">年轻创业者</label>
+                            </div>
+                            <div class="checkbox-item">
+                                <input type="checkbox" id="audienceOther" name="targetAudience" value="其他" onchange="toggleOtherInput('audienceOther', 'audienceOtherInput')">
+                                <label for="audienceOther">其他</label>
+                            </div>
+                        </div>
+                        <div class="other-input" id="audienceOtherInput">
+                            <input type="text" name="targetAudienceOther" placeholder="请说明其他目标受众...">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="additionalInfo">还有什么想补充的信息？</label>
+                        <textarea id="additionalInfo" name="additionalInfo" placeholder="请分享任何您认为重要的补充信息..."></textarea>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-btn" id="submitBtn">
+                    🚀 生成专属调研报告
+                </button>
+            </form>
+
+            <!-- 加载状态 -->
+            <div class="loading" id="loading">
+                <div class="loading-spinner"></div>
+                <h3>正在生成您的专属调研报告...</h3>
+                <p>请稍候，我们正在分析您的信息</p>
             </div>
 
-            <!-- 第五部分：创业故事 -->
-            <div class="section">
-                <h2 class="section-title">📖 创业故事</h2>
-                
-                <div class="form-group">
-                    <label for="whyStartBusiness">为什么会开这家店？有什么特殊的契机吗？</label>
-                    <textarea id="whyStartBusiness" name="whyStartBusiness" placeholder="请分享您的创业故事..."></textarea>
-                </div>
-
-                <div class="form-group">
-                    <label for="memorableEvent">创业过程中最难忘的事情</label>
-                    <textarea id="memorableEvent" name="memorableEvent" placeholder="请描述一个让您印象深刻的经历..."></textarea>
-                </div>
-
-                <div class="form-group">
-                    <label for="proudMoment">最有成就感的时刻</label>
-                    <textarea id="proudMoment" name="proudMoment" placeholder="请分享您最自豪的时刻..."></textarea>
-                </div>
-
-                <div class="form-group">
-                    <label for="difficultTime">最困难的时候是怎么坚持下来的？</label>
-                    <textarea id="difficultTime" name="difficultTime" placeholder="请分享您克服困难的经历..."></textarea>
-                </div>
-
-                <div class="form-group">
-                    <label for="customerStory">有没有特别印象深刻的客户？</label>
-                    <textarea id="customerStory" name="customerStory" placeholder="请分享一个客户故事..."></textarea>
-                </div>
-
-                <div class="form-group">
-                    <label for="familySupport">家人对您事业的态度</label>
-                    <div class="radio-group">
-                        <div class="radio-item">
-                            <input type="radio" id="support1" name="familySupport" value="非常支持">
-                            <label for="support1">非常支持</label>
-                        </div>
-                        <div class="radio-item">
-                            <input type="radio" id="support2" name="familySupport" value="一般支持">
-                            <label for="support2">一般支持</label>
-                        </div>
-                        <div class="radio-item">
-                            <input type="radio" id="support3" name="familySupport" value="有些担心">
-                            <label for="support3">有些担心</label>
-                        </div>
-                        <div class="radio-item">
-                            <input type="radio" id="support4" name="familySupport" value="不太支持">
-                            <label for="support4">不太支持</label>
-                        </div>
-                    </div>
-                </div>
+            <!-- 成功状态 -->
+            <div class="success-message" id="successMessage">
+                <h2>🎉 调研报告生成成功！</h2>
+                <p>您的专属调研报告已经生成完成，可以直接复制使用</p>
+                <button class="download-btn" id="copyReportBtn">📋 复制完整报告</button>
+                <p style="margin-top: 20px; color: #666;">
+                    我们会在2个工作日内与您联系，讨论具体的合作方案
+                </p>
             </div>
-
-            <!-- 第六部分：IP定位意向 -->
-            <div class="section">
-                <h2 class="section-title">🎯 IP定位意向</h2>
-                
-                <div class="form-group">
-                    <label>您希望在抖音上给大家什么印象？（可多选）</label>
-                    <div class="checkbox-group">
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="image1" name="desiredImage" value="专业的行业专家">
-                            <label for="image1">专业的行业专家</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="image2" name="desiredImage" value="亲切的邻家老板">
-                            <label for="image2">亲切的邻家老板</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="image3" name="desiredImage" value="有趣的生活达人">
-                            <label for="image3">有趣的生活达人</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="image4" name="desiredImage" value="励志的创业者">
-                            <label for="image4">励志的创业者</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="image5" name="desiredImage" value="温暖的服务者">
-                            <label for="image5">温暖的服务者</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="imageOther" name="desiredImage" value="其他" onchange="toggleOtherInput('imageOther', 'imageOtherInput')">
-                            <label for="imageOther">其他</label>
-                        </div>
-                    </div>
-                    <div class="other-input" id="imageOtherInput">
-                        <input type="text" name="desiredImageOther" placeholder="请说明您希望的其他形象...">
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label>最想传递给观众什么价值？</label>
-                    <div class="radio-group">
-                        <div class="radio-item">
-                            <input type="radio" id="value1" name="valueToDeliver" value="专业知识">
-                            <label for="value1">专业知识</label>
-                        </div>
-                        <div class="radio-item">
-                            <input type="radio" id="value2" name="valueToDeliver" value="生活态度">
-                            <label for="value2">生活态度</label>
-                        </div>
-                        <div class="radio-item">
-                            <input type="radio" id="value3" name="valueToDeliver" value="创业精神">
-                            <label for="value3">创业精神</label>
-                        </div>
-                        <div class="radio-item">
-                            <input type="radio" id="value4" name="valueToDeliver" value="服务理念">
-                            <label for="value4">服务理念</label>
-                        </div>
-                        <div class="radio-item">
-                            <input type="radio" id="value5" name="valueToDeliver" value="产品品质">
-                            <label for="value5">产品品质</label>
-                        </div>
-                        <div class="radio-item">
-                            <input type="radio" id="valueOther" name="valueToDeliver" value="其他" onchange="toggleOtherInput('valueOther', 'valueOtherInput')">
-                            <label for="valueOther">其他</label>
-                        </div>
-                    </div>
-                    <div class="other-input" id="valueOtherInput">
-                        <input type="text" name="valueToDeliverOther" placeholder="请说明您想传递的其他价值...">
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label>您更愿意分享什么类型的内容？（可多选）</label>
-                    <div class="checkbox-group">
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="content1" name="contentPreference" value="工作日常">
-                            <label for="content1">工作日常</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="content2" name="contentPreference" value="产品制作过程">
-                            <label for="content2">产品制作过程</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="content3" name="contentPreference" value="经营心得">
-                            <label for="content3">经营心得</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="content4" name="contentPreference" value="生活感悟">
-                            <label for="content4">生活感悟</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="content5" name="contentPreference" value="客户互动">
-                            <label for="content5">客户互动</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="content6" name="contentPreference" value="行业知识">
-                            <label for="content6">行业知识</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="content7" name="contentPreference" value="家庭生活">
-                            <label for="content7">家庭生活</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="content8" name="contentPreference" value="个人爱好">
-                            <label for="content8">个人爱好</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="contentOther" name="contentPreference" value="其他" onchange="toggleOtherInput('contentOther', 'contentOtherInput')">
-                            <label for="contentOther">其他</label>
-                        </div>
-                    </div>
-                    <div class="other-input" id="contentOtherInput">
-                        <input type="text" name="contentPreferenceOther" placeholder="请说明其他内容类型...">
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="avoidContent">有什么绝对不愿意分享的？</label>
-                    <textarea id="avoidContent" name="avoidContent" placeholder="请说明您不希望分享的内容类型..."></textarea>
-                </div>
-            </div>
-
-            <!-- 第七部分：合作期待 -->
-            <div class="section">
-                <h2 class="section-title">🤝 合作期待</h2>
-                
-                <div class="form-group">
-                    <label>希望通过抖音运营实现什么目标？</label>
-                    <div class="radio-group">
-                        <div class="radio-item">
-                            <input type="radio" id="goal1" name="mainGoal" value="增加店铺知名度">
-                            <label for="goal1">增加店铺知名度</label>
-                        </div>
-                        <div class="radio-item">
-                            <input type="radio" id="goal2" name="mainGoal" value="提升客流量">
-                            <label for="goal2">提升客流量</label>
-                        </div>
-                        <div class="radio-item">
-                            <input type="radio" id="goal3" name="mainGoal" value="增加销售额">
-                            <label for="goal3">增加销售额</label>
-                        </div>
-                        <div class="radio-item">
-                            <input type="radio" id="goal4" name="mainGoal" value="建立私域流量">
-                            <label for="goal4">建立私域流量</label>
-                        </div>
-                        <div class="radio-item">
-                            <input type="radio" id="goal5" name="mainGoal" value="打造个人IP">
-                            <label for="goal5">打造个人IP</label>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label>期待的效果时间</label>
-                    <div class="radio-group">
-                        <div class="radio-item">
-                            <input type="radio" id="time1" name="expectedTime" value="1个月内见效">
-                            <label for="time1">1个月内见效</label>
-                        </div>
-                        <div class="radio-item">
-                            <input type="radio" id="time2" name="expectedTime" value="3个月内见效">
-                            <label for="time2">3个月内见效</label>
-                        </div>
-                        <div class="radio-item">
-                            <input type="radio" id="time3" name="expectedTime" value="6个月内见效">
-                            <label for="time3">6个月内见效</label>
-                        </div>
-                        <div class="radio-item">
-                            <input type="radio" id="time4" name="expectedTime" value="1年内见效">
-                            <label for="time4">1年内见效</label>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label>可接受的投入预算（月）</label>
-                    <div class="radio-group">
-                        <div class="radio-item">
-                            <input type="radio" id="budget1" name="budget" value="3000元以下">
-                            <label for="budget1">3000元以下</label>
-                        </div>
-                        <div class="radio-item">
-                            <input type="radio" id="budget2" name="budget" value="3000-5000元">
-                            <label for="budget2">3000-5000元</label>
-                        </div>
-                        <div class="radio-item">
-                            <input type="radio" id="budget3" name="budget" value="5000-8000元">
-                            <label for="budget3">5000-8000元</label>
-                        </div>
-                        <div class="radio-item">
-                            <input type="radio" id="budget4" name="budget" value="8000-12000元">
-                            <label for="budget4">8000-12000元</label>
-                        </div>
-                        <div class="radio-item">
-                            <input type="radio" id="budget5" name="budget" value="12000元以上">
-                            <label for="budget5">12000元以上</label>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label>您能投入多少时间配合运营？</label>
-                    <div class="radio-group">
-                        <div class="radio-item">
-                            <input type="radio" id="timeInvest1" name="timeInvestment" value="每天1小时以内">
-                            <label for="timeInvest1">每天1小时以内</label>
-                        </div>
-                        <div class="radio-item">
-                            <input type="radio" id="timeInvest2" name="timeInvestment" value="每天1-2小时">
-                            <label for="timeInvest2">每天1-2小时</label>
-                        </div>
-                        <div class="radio-item">
-                            <input type="radio" id="timeInvest3" name="timeInvestment" value="每天2-3小时">
-                            <label for="timeInvest3">每天2-3小时</label>
-                        </div>
-                        <div class="radio-item">
-                            <input type="radio" id="timeInvest4" name="timeInvestment" value="看情况安排">
-                            <label for="timeInvest4">看情况安排</label>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label>愿意出镜拍摄吗？</label>
-                    <div class="radio-group">
-                        <div class="radio-item">
-                            <input type="radio" id="appear1" name="appearanceWillingness" value="非常愿意">
-                            <label for="appear1">非常愿意</label>
-                        </div>
-                        <div class="radio-item">
-                            <input type="radio" id="appear2" name="appearanceWillingness" value="可以尝试">
-                            <label for="appear2">可以尝试</label>
-                        </div>
-                        <div class="radio-item">
-                            <input type="radio" id="appear3" name="appearanceWillingness" value="不太愿意">
-                            <label for="appear3">不太愿意</label>
-                        </div>
-                        <div class="radio-item">
-                            <input type="radio" id="appear4" name="appearanceWillingness" value="坚决不愿意">
-                            <label for="appear4">坚决不愿意</label>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label>愿意在以下场景出镜（可多选）</label>
-                    <div class="checkbox-group">
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="scene1" name="filmingScenes" value="店内工作">
-                            <label for="scene1">店内工作</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="scene2" name="filmingScenes" value="产品介绍">
-                            <label for="scene2">产品介绍</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="scene3" name="filmingScenes" value="客户服务">
-                            <label for="scene3">客户服务</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="scene4" name="filmingScenes" value="制作过程">
-                            <label for="scene4">制作过程</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="scene5" name="filmingScenes" value="日常生活">
-                            <label for="scene5">日常生活</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="scene6" name="filmingScenes" value="学习分享">
-                            <label for="scene6">学习分享</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="sceneOther" name="filmingScenes" value="其他" onchange="toggleOtherInput('sceneOther', 'sceneOtherInput')">
-                            <label for="sceneOther">其他</label>
-                        </div>
-                    </div>
-                    <div class="other-input" id="sceneOtherInput">
-                        <input type="text" name="filmingScenesOther" placeholder="请说明其他拍摄场景...">
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="weeklyFilmingTime">每周能配合拍摄的时间</label>
-                    <div class="input-with-suffix">
-                        <input type="number" id="weeklyFilmingTime" name="weeklyFilmingTime" min="1" max="50">
-                        <span class="input-suffix">小时</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 第八部分：产品服务特色 -->
-            <div class="section">
-                <h2 class="section-title">🛍️ 产品/服务特色</h2>
-                
-                <div class="form-group">
-                    <label for="mainProducts">请列出3-5个主推产品/服务</label>
-                    <textarea id="mainProducts" name="mainProducts" placeholder="格式：产品名称 - 价格 - 利润率&#10;例如：招牌奶茶 - 15元 - 60%&#10;&#10;1. &#10;2. &#10;3. &#10;4. &#10;5. "></textarea>
-                </div>
-
-                <div class="form-group">
-                    <label for="suitableProducts">哪些产品最适合线上推广？为什么？</label>
-                    <textarea id="suitableProducts" name="suitableProducts" placeholder="请详细说明产品特点和推广优势..."></textarea>
-                </div>
-
-                <div class="form-group">
-                    <label for="uniqueStory">有什么独特的产品故事或制作工艺吗？</label>
-                    <textarea id="uniqueStory" name="uniqueStory" placeholder="请分享您的产品特色、制作工艺或背后的故事..."></textarea>
-                </div>
-
-                <div class="form-group">
-                    <label for="marketingExperience">之前做过哪些营销活动？效果如何？</label>
-                    <textarea id="marketingExperience" name="marketingExperience" placeholder="请分享您的营销经验和效果..."></textarea>
-                </div>
-
-                <div class="form-group">
-                    <label>店内有什么特色场景适合拍摄？（可多选）</label>
-                    <div class="checkbox-group">
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="shopScene1" name="shopScenes" value="制作过程">
-                            <label for="shopScene1">制作过程</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="shopScene2" name="shopScenes" value="用餐环境">
-                            <label for="shopScene2">用餐环境</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="shopScene3" name="shopScenes" value="产品展示">
-                            <label for="shopScene3">产品展示</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="shopScene4" name="shopScenes" value="服务场景">
-                            <label for="shopScene4">服务场景</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="shopScene5" name="shopScenes" value="装修特色">
-                            <label for="shopScene5">装修特色</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="shopScene6" name="shopScenes" value="团队合作">
-                            <label for="shopScene6">团队合作</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="shopSceneOther" name="shopScenes" value="其他" onchange="toggleOtherInput('shopSceneOther', 'shopSceneOtherInput')">
-                            <label for="shopSceneOther">其他</label>
-                        </div>
-                    </div>
-                    <div class="other-input" id="shopSceneOtherInput">
-                        <input type="text" name="shopScenesOther" placeholder="请说明其他特色场景...">
-                    </div>
-                </div>
-            </div>
-
-            <!-- 第九部分：发展目标 -->
-            <div class="section">
-                <h2 class="section-title">🎊 发展目标</h2>
-                
-                <div class="form-group">
-                    <label for="shortTermGoals">3个月内希望达到的目标</label>
-                    <textarea id="shortTermGoals" name="shortTermGoals" placeholder="请描述您的短期目标，如：&#10;- 粉丝数量：1万&#10;- 月增加客流：100人&#10;- 月增加营业额：2万元&#10;- 其他目标..."></textarea>
-                </div>
-
-                <div class="form-group">
-                    <label for="longTermVision">理想中的个人IP状态（1年后）</label>
-                    <textarea id="longTermVision" name="longTermVision" placeholder="请描述您希望达到的长期目标和愿景..."></textarea>
-                </div>
-
-                <div class="form-group">
-                    <label>希望通过个人IP实现什么？（可多选）</label>
-                    <div class="checkbox-group">
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="ipGoal1" name="ipGoals" value="店铺生意更好">
-                            <label for="ipGoal1">店铺生意更好</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="ipGoal2" name="ipGoals" value="个人影响力提升">
-                            <label for="ipGoal2">个人影响力提升</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="ipGoal3" name="ipGoals" value="拓展更多商机">
-                            <label for="ipGoal3">拓展更多商机</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="ipGoal4" name="ipGoals" value="帮助更多同行">
-                            <label for="ipGoal4">帮助更多同行</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="ipGoal5" name="ipGoals" value="成为行业专家">
-                            <label for="ipGoal5">成为行业专家</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="ipGoalOther" name="ipGoals" value="其他" onchange="toggleOtherInput('ipGoalOther', 'ipGoalOtherInput')">
-                            <label for="ipGoalOther">其他</label>
-                        </div>
-                    </div>
-                    <div class="other-input" id="ipGoalOtherInput">
-                        <input type="text" name="ipGoalsOther" placeholder="请说明其他目标...">
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label>最希望哪类人关注您？（可多选）</label>
-                    <div class="checkbox-group">
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="audience1" name="targetAudience" value="潜在客户">
-                            <label for="audience1">潜在客户</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="audience2" name="targetAudience" value="同行业者">
-                            <label for="audience2">同行业者</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="audience3" name="targetAudience" value="本地居民">
-                            <label for="audience3">本地居民</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="audience4" name="targetAudience" value="全国网友">
-                            <label for="audience4">全国网友</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="audience5" name="targetAudience" value="年轻创业者">
-                            <label for="audience5">年轻创业者</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="audienceOther" name="targetAudience" value="其他" onchange="toggleOtherInput('audienceOther', 'audienceOtherInput')">
-                            <label for="audienceOther">其他</label>
-                        </div>
-                    </div>
-                    <div class="other-input" id="audienceOtherInput">
-                        <input type="text" name="targetAudienceOther" placeholder="请说明其他目标受众...">
-                    </div>
-                </div>
-            </div>
-
-            <!-- 第十部分：补充信息 -->
-            <div class="section">
-                <h2 class="section-title">💭 补充信息</h2>
-                
-                <div class="form-group">
-                    <label for="additionalInfo">还有什么想让我们了解的个人特色？</label>
-                    <textarea id="additionalInfo" name="additionalInfo" placeholder="请补充任何您认为重要的信息..."></textarea>
-                </div>
-
-                <div class="form-group">
-                    <label for="concerns">对个人IP打造有什么担心或顾虑？</label>
-                    <textarea id="concerns" name="concerns" placeholder="请坦诚分享您的顾虑，我们会针对性地解决..."></textarea>
-                </div>
-
-                <div class="form-group">
-                    <label for="specialRequirements">希望我们在IP打造过程中特别注意什么？</label>
-                    <textarea id="specialRequirements" name="specialRequirements" placeholder="请说明您的特殊要求或注意事项..."></textarea>
-                </div>
-
-                <div class="form-group">
-                    <label for="expectations">对这次合作有什么期待？</label>
-<textarea id="expectations" name="expectations" placeholder="请分享您对合作的期待和想法..."></textarea>
-</div>
-                <div class="form-group">
-                    <label>您目前使用的社交媒体平台（可多选）</label>
-                    <div class="checkbox-group">
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="social1" name="socialPlatforms" value="微信朋友圈">
-                            <label for="social1">微信朋友圈</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="social2" name="socialPlatforms" value="抖音">
-                            <label for="social2">抖音</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="social3" name="socialPlatforms" value="快手">
-                            <label for="social3">快手</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="social4" name="socialPlatforms" value="小红书">
-                            <label for="social4">小红书</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="social5" name="socialPlatforms" value="微博">
-                            <label for="social5">微博</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="social6" name="socialPlatforms" value="视频号">
-                            <label for="social6">视频号</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="socialOther" name="socialPlatforms" value="其他" onchange="toggleOtherInput('socialOther', 'socialOtherInput')">
-                            <label for="socialOther">其他</label>
-                        </div>
-                    </div>
-                    <div class="other-input" id="socialOtherInput">
-                        <input type="text" name="socialPlatformsOther" placeholder="请说明其他平台...">
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="socialMediaUsage">朋友圈主要发什么内容？</label>
-                    <textarea id="socialMediaUsage" name="socialMediaUsage" placeholder="请描述您平时在朋友圈分享的内容类型..."></textarea>
-                </div>
-            </div>
-
-            <button type="submit" class="submit-btn" id="submitBtn">
-                🚀 提交调研表并生成报告
-            </button>
-        </form>
-
-        <!-- 加载状态 -->
-        <div class="loading" id="loading">
-            <div class="loading-spinner"></div>
-            <h3>正在生成您的专属报告...</h3>
-            <p>请稍候，我们正在分析您的信息并制作Excel报告</p>
         </div>
 
-        <!-- 成功状态 -->
-        <div class="success-message" id="successMessage">
-            <h2>🎉 报告生成成功！</h2>
-            <p>您的专属调研报告已经生成完成</p>
-            <a href="#" class="download-btn excel" id="downloadExcelBtn">📊 下载Excel报告</a>
-            <p style="margin-top: 20px; color: #666;">
-                我们会在2个工作日内与您联系，讨论具体的合作方案
-            </p>
+        <!-- 报告内容显示区域 -->
+        <div class="report-content" id="reportContent">
+            <div class="form-container">
+                <h2 style="text-align: center; color: #667eea; margin-bottom: 30px;">📊 调研报告详情</h2>
+                <div id="reportText"></div>
+                <button class="download-btn" onclick="copyReport()" style="margin-top: 20px;">📋 复制报告内容</button>
+            </div>
+        </div>
+
+        <!-- 复制成功提示 -->
+        <div class="copy-notification" id="copyNotification">
+            ✅ 报告内容已复制到剪贴板
         </div>
     </div>
-</div>
 
-<!-- 引入Excel生成库 -->
-<script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
-
-<script>
-    // 其他选项切换功能
-    function toggleOtherInput(checkboxId, inputId) {
-        const checkbox = document.getElementById(checkboxId);
-        const input = document.getElementById(inputId);
-        
-        if (checkbox.checked) {
-            input.classList.add('show');
-        } else {
-            input.classList.remove('show');
-            const textInput = input.querySelector('input[type="text"]');
-            if (textInput) {
-                textInput.value = '';
-            }
+    <script>
+        // 进度条更新
+        function updateProgress() {
+            const form = document.getElementById('surveyForm');
+            const inputs = form.querySelectorAll('input[required], select[required], textarea[required]');
+            const filled = Array.from(inputs).filter(input => input.value.trim() !== '').length;
+            const progress = (filled / inputs.length) * 100;
+            document.getElementById('progressFill').style.width = progress + '%';
         }
-    }
 
-    // 进度条更新
-    function updateProgress() {
-        const form = document.getElementById('surveyForm');
-        const inputs = form.querySelectorAll('input[required], select[required], textarea[required]');
-        const filledInputs = Array.from(inputs).filter(input => {
-            if (input.type === 'radio') {
-                return form.querySelector(`input[name="${input.name}"]:checked`);
-            }
-            return input.value.trim() !== '';
-        });
-        
-        const progress = (filledInputs.length / inputs.length) * 100;
-        document.getElementById('progressFill').style.width = progress + '%';
-    }
+        // 监听所有输入变化
+        document.addEventListener('input', updateProgress);
+        document.addEventListener('change', updateProgress);
 
-    // 监听表单变化
-    document.getElementById('surveyForm').addEventListener('input', updateProgress);
-    document.getElementById('surveyForm').addEventListener('change', updateProgress);
-
-    // 表单提交处理
-    document.getElementById('surveyForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        // 显示加载状态
-        document.getElementById('surveyForm').style.display = 'none';
-        document.getElementById('loading').style.display = 'block';
-        
-        // 收集表单数据
-        const formData = new FormData(this);
-        const data = {};
-        
-        // 处理单选和文本输入
-        for (let [key, value] of formData.entries()) {
-            if (data[key]) {
-                if (Array.isArray(data[key])) {
-                    data[key].push(value);
-                } else {
-                    data[key] = [data[key], value];
-                }
+        // 其他选项切换
+        function toggleOtherInput(checkboxId, inputId) {
+            const checkbox = document.getElementById(checkboxId);
+            const input = document.getElementById(inputId);
+            
+            if (checkbox.checked) {
+                input.classList.add('show');
             } else {
-                data[key] = value;
+                input.classList.remove('show');
+                input.querySelector('input').value = '';
             }
         }
-        
-        // 处理多选框
-        const checkboxGroups = [
-            'customerAge', 'advantages', 'personality', 'hobbies', 'languageStyle',
-            'desiredImage', 'contentPreference', 'filmingScenes', 'shopScenes',
-            'ipGoals', 'targetAudience', 'socialPlatforms'
-        ];
-        checkboxGroups.forEach(group => {
-            const checkboxes = document.querySelectorAll(`input[name="${group}"]:checked`);
-            data[group] = Array.from(checkboxes).map(cb => cb.value);
-        });
 
-        // 处理"其他"选项的文本输入
-        const otherInputs = {
-            'customerAgeOther': 'customerAge',
-            'advantagesOther': 'advantages',
-            'personalityOther': 'personality',
-            'hobbiesOther': 'hobbies',
-            'languageStyleOther': 'languageStyle',
-            'desiredImageOther': 'desiredImage',
-            'valueToDeliverOther': 'valueToDeliver',
-            'contentPreferenceOther': 'contentPreference',
-            'filmingScenesOther': 'filmingScenes',
-            'shopScenesOther': 'shopScenes',
-            'ipGoalsOther': 'ipGoals',
-            'targetAudienceOther': 'targetAudience',
-            'socialPlatformsOther': 'socialPlatforms'
-        };
-
-        Object.keys(otherInputs).forEach(otherKey => {
-            if (data[otherKey] && data[otherKey].trim()) {
-                const mainKey = otherInputs[otherKey];
-                if (Array.isArray(data[mainKey])) {
-                    // 替换"其他"为具体内容
-                    const otherIndex = data[mainKey].indexOf('其他');
-                    if (otherIndex !== -1) {
-                        data[mainKey][otherIndex] = data[otherKey];
+        // 表单提交
+        document.getElementById('surveyForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // 显示加载状态
+            document.querySelector('.form-container').style.display = 'none';
+            document.getElementById('loading').style.display = 'block';
+            
+            // 收集表单数据
+            const formData = new FormData(this);
+            const data = {};
+            
+            // 处理普通字段
+            for (let [key, value] of formData.entries()) {
+                if (data[key]) {
+                    if (Array.isArray(data[key])) {
+                        data[key].push(value);
+                    } else {
+                        data[key] = [data[key], value];
                     }
-                } else if (data[mainKey] === '其他') {
-                    data[mainKey] = data[otherKey];
+                } else {
+                    data[key] = value;
                 }
             }
-        });
-        
-        // 模拟处理时间
-        setTimeout(() => {
-            generateExcelReport(data);
-        }, 3000);
-    });
-
-    // 生成Excel报告
-    function generateExcelReport(data) {
-        // 创建工作簿
-        const wb = XLSX.utils.book_new();
-        
-        // 创建基本信息工作表
-        const basicInfoData = [
-            ['项目', '内容'],
-            ['店铺名称', data.shopName || ''],
-            ['主营业务', data.business || ''],
-            ['店铺地址', data.address || ''],
-            ['营业面积', data.area ? `${data.area}平方米` : ''],
-            ['开店时间', data.openTime || ''],
-            ['员工人数', data.staffCount ? `${data.staffCount}人` : ''],
-            ['联系人姓名', data.contactName || ''],
-            ['职位', data.position || ''],
-            ['联系电话', data.phone || ''],
-            ['微信号', data.wechat || ''],
-            ['', ''],
-            ['经营现状', ''],
-            ['月营业额', data.revenue || ''],
-            ['平均客单价', data.avgPrice ? `${data.avgPrice}元` : ''],
-            ['主要客户群体', Array.isArray(data.customerAge) ? data.customerAge.join('、') : ''],
-            ['竞争优势', Array.isArray(data.advantages) ? data.advantages.join('、') : ''],
-            ['主要困难', data.challenges || '']
-        ];
-        
-        const ws1 = XLSX.utils.aoa_to_sheet(basicInfoData);
-        XLSX.utils.book_append_sheet(wb, ws1, '店铺基本信息');
-
-        // 创建个人IP信息工作表
-        const personalInfoData = [
-            ['项目', '内容'],
-            ['年龄', data.age ? `${data.age}岁` : ''],
-            ['性别', data.gender || ''],
-            ['学历', data.education || ''],
-            ['籍贯', data.hometown || ''],
-            ['在本地生活时间', data.localTime ? `${data.localTime}年` : ''],
-            ['开店时长', data.shopDuration ? `${data.shopDuration}年` : ''],
-            ['之前工作经历', data.previousWork || ''],
-            ['选择行业原因', data.whyThisBusiness || ''],
-            ['', ''],
-            ['性格特点', ''],
-            ['朋友评价', Array.isArray(data.personality) ? data.personality.join('、') : ''],
-            ['个人特点', data.uniqueTrait || ''],
-            ['爱好技能', Array.isArray(data.hobbies) ? data.hobbies.join('、') : ''],
-            ['镜头感受', data.cameraFeeling || ''],
-            ['语言特点', Array.isArray(data.languageStyle) ? data.languageStyle.join('、') : ''],
-            ['口头禅', data.catchphrase || '']
-        ];
-        
-        const ws2 = XLSX.utils.aoa_to_sheet(personalInfoData);
-        XLSX.utils.book_append_sheet(wb, ws2, '个人IP信息');
-
-        // 创建创业故事工作表
-        const storyData = [
-            ['项目', '内容'],
-            ['创业初衷', data.whyStartBusiness || ''],
-            ['难忘经历', data.memorableEvent || ''],
-            ['成就时刻', data.proudMoment || ''],
-            ['困难坚持', data.difficultTime || ''],
-            ['客户故事', data.customerStory || ''],
-            ['家人态度', data.familySupport || '']
-        ];
-        
-        const ws3 = XLSX.utils.aoa_to_sheet(storyData);
-        XLSX.utils.book_append_sheet(wb, ws3, '创业故事');
-
-        // 创建IP定位工作表
-        const ipPositioningData = [
-            ['项目', '内容'],
-            ['期望形象', Array.isArray(data.desiredImage) ? data.desiredImage.join('、') : ''],
-            ['价值传递', data.valueToDeliver || ''],
-            ['内容偏好', Array.isArray(data.contentPreference) ? data.contentPreference.join('、') : ''],
-            ['避免内容', data.avoidContent || ''],
-            ['拍摄场景', Array.isArray(data.filmingScenes) ? data.filmingScenes.join('、') : '']
-        ];
-        
-        const ws4 = XLSX.utils.aoa_to_sheet(ipPositioningData);
-        XLSX.utils.book_append_sheet(wb, ws4, 'IP定位建议');
-
-        // 创建合作方案工作表
-        const cooperationData = [
-            ['项目', '内容'],
-            ['主要目标', data.mainGoal || ''],
-            ['期望时间', data.expectedTime || ''],
-            ['投入预算', data.budget || ''],
-            ['时间配合', data.timeInvestment || ''],
-            ['出镜意愿', data.appearanceWillingness || ''],
-            ['拍摄时间', data.weeklyFilmingTime ? `每周${data.weeklyFilmingTime}小时` : '']
-        ];
-        
-        const ws5 = XLSX.utils.aoa_to_sheet(cooperationData);
-        XLSX.utils.book_append_sheet(wb, ws5, '合作方案');
-
-        // 创建产品特色工作表
-        const productData = [
-            ['项目', '内容'],
-            ['主推产品', data.mainProducts || ''],
-            ['推广优势', data.suitableProducts || ''],
-            ['独特故事', data.uniqueStory || ''],
-            ['营销经验', data.marketingExperience || ''],
-            ['拍摄场景', Array.isArray(data.shopScenes) ? data.shopScenes.join('、') : '']
-        ];
-        
-        const ws6 = XLSX.utils.aoa_to_sheet(productData);
-        XLSX.utils.book_append_sheet(wb, ws6, '产品服务特色');
-
-        // 创建发展规划工作表
-        const developmentData = [
-            ['项目', '内容'],
-            ['短期目标（3个月）', data.shortTermGoals || ''],
-            ['长期愿景（1年）', data.longTermVision || ''],
-            ['IP目标', Array.isArray(data.ipGoals) ? data.ipGoals.join('、') : ''],
-            ['目标受众', Array.isArray(data.targetAudience) ? data.targetAudience.join('、') : '']
-        ];
-        
-        const ws7 = XLSX.utils.aoa_to_sheet(developmentData);
-        XLSX.utils.book_append_sheet(wb, ws7, '发展规划');
-
-        // 创建补充信息工作表
-        const additionalData = [
-            ['项目', '内容'],
-            ['个人特色', data.additionalInfo || ''],
-            ['担心顾虑', data.concerns || ''],
-            ['特殊要求', data.specialRequirements || ''],
-            ['合作期待', data.expectations || ''],
-            ['使用平台', Array.isArray(data.socialPlatforms) ? data.socialPlatforms.join('、') : ''],
-            ['朋友圈内容', data.socialMediaUsage || '']
-        ];
-        
-        const ws8 = XLSX.utils.aoa_to_sheet(additionalData);
-        XLSX.utils.book_append_sheet(wb, ws8, '补充信息');
-
-        // 创建行动计划工作表
-        const actionPlanData = [
-            ['阶段', '内容', '时间'],
-            ['1. 深度沟通', '2个工作日内详谈', '签约前'],
-            ['2. 方案制定', '根据调研结果定制专属方案', '签约后3-5天'],
-            ['3. 内容策划', '制定首月内容计划', '签约后1周'],
-            ['4. 正式启动', '开始店铺运营+IP打造', '签约后15个工作日'],
-            ['', '', ''],
-            ['预计启动时间', '签约后15个工作日', ''],
-            ['首次效果评估', '合作开始后30天', ''],
-            ['', '', ''],
-            ['联系方式', '', ''],
-            ['公司名称', '笑果文化', ''],
-            ['联系电话', '400-123-4567', ''],
-            ['微信号', 'xiaoguo_culture', ''],
-            ['生成日期', new Date().toLocaleDateString(), '']
-        ];
-        
-        const ws9 = XLSX.utils.aoa_to_sheet(actionPlanData);
-        XLSX.utils.book_append_sheet(wb, ws9, '下一步行动计划');
-
-        // 设置列宽
-        const sheets = [ws1, ws2, ws3, ws4, ws5, ws6, ws7, ws8, ws9];
-        sheets.forEach(ws => {
-            ws['!cols'] = [
-                { width: 20 },  // 第一列
-                { width: 50 },  // 第二列
-                { width: 20 }   // 第三列
-            ];
+            
+            // 处理多选框
+            const checkboxGroups = ['customerAge', 'advantages', 'personality', 'hobbies', 'languageStyle', 'desiredImage', 'contentPreference', 'filmingScenes', 'shopScenes', 'ipGoals', 'targetAudience'];
+            checkboxGroups.forEach(group => {
+                const checkboxes = document.querySelectorAll(`input[name="${group}"]:checked`);
+                data[group] = Array.from(checkboxes).map(cb => cb.value);
+            });
+            
+            // 模拟处理时间
+            setTimeout(() => {
+                generateReport(data);
+            }, 2000);
         });
 
-        // 生成并下载Excel文件
-        const fileName = `${data.shopName || '实体店'}_抖音代运营调研报告_${new Date().toISOString().slice(0,10)}.xlsx`;
-        
-        // 显示成功消息
-        document.getElementById('loading').style.display = 'none';
-        document.getElementById('successMessage').style.display = 'block';
-        
-// 生成Excel文件的二进制数据
-const excelBuffer = XLSX.write(wb, { bookType: 'xlsx', type: 'array' });
-const blob = new Blob([excelBuffer], { 
-    type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' 
-});
+        function generateReport(data) {
+            // 生成文本格式的报告
+            let reportText = generateTextReport(data);
+            
+            // 显示报告
+            document.getElementById('reportText').innerHTML = reportText;
+            document.getElementById('loading').style.display = 'none';
+            document.getElementById('successMessage').style.display = 'block';
+            document.getElementById('reportContent').style.display = 'block';
+            
+            // 设置复制按钮事件
+            document.getElementById('copyReportBtn').addEventListener('click', function() {
+                copyReport();
+            });
+        }
 
-// 创建下载URL
-const downloadUrl = URL.createObjectURL(blob);
+        function generateTextReport(data) {
+            let html = '';
+            
+            // 店铺基本信息
+            html += `<div class="report-section">
+                <h3>🏪 店铺基本信息</h3>
+                <div class="report-item"><span class="report-label">店铺名称：</span><span class="report-value">${data.shopName || '未填写'}</span></div>
+                <div class="report-item"><span class="report-label">主营业务：</span><span class="report-value">${data.business || '未填写'}</span></div>
+                <div class="report-item"><span class="report-label">店铺地址：</span><span class="report-value">${data.address || '未填写'}</span></div>
+                <div class="report-item"><span class="report-label">营业面积：</span><span class="report-value">${data.area ? data.area + '平方米' : '未填写'}</span></div>
+                <div class="report-item"><span class="report-label">开店时间：</span><span class="report-value">${data.openTime || '未填写'}</span></div>
+                <div class="report-item"><span class="report-label">员工人数：</span><span class="report-value">${data.staffCount ? data.staffCount + '人' : '未填写'}</span></div>
+                <div class="report-item"><span class="report-label">联系人：</span><span class="report-value">${data.contactName || '未填写'}</span></div>
+                <div class="report-item"><span class="report-label">职位：</span><span class="report-value">${data.position || '未填写'}</span></div>
+                <div class="report-item"><span class="report-label">联系电话：</span><span class="report-value">${data.phone || '未填写'}</span></div>
+                <div class="report-item"><span class="report-label">微信号：</span><span class="report-value">${data.wechat || '未填写'}</span></div>
+            </div>`;
 
-// 替换下载按钮为直接链接显示
-const downloadSection = document.createElement('div');
-downloadSection.innerHTML = `
-    <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin: 20px 0;">
-        <h4 style="margin-bottom: 15px; color: #333;">📁 文件下载链接</h4>
-        <div style="background: white; padding: 15px; border-radius: 5px; border: 1px solid #ddd; margin-bottom: 15px;">
-            <p style="margin-bottom: 10px; font-weight: bold;">文件名：${fileName}</p>
-            <p style="margin-bottom: 10px; word-break: break-all; font-family: monospace; font-size: 12px; color: #666;">
-                ${downloadUrl}
-            </p>
-            <button onclick="copyToClipboard('${downloadUrl}')" style="background: #28a745; color: white; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer; margin-right: 10px;">
-                📋 复制链接
-            </button>
-            <a href="${downloadUrl}" download="${fileName}" style="background: #007bff; color: white; text-decoration: none; padding: 8px 16px; border-radius: 4px; display: inline-block;">
-                💾 直接下载
-            </a>
-        </div>
-        <div style="font-size: 14px; color: #666;">
-            <p><strong>使用说明：</strong></p>
-            <ul style="margin: 10px 0; padding-left: 20px;">
-                <li>点击"直接下载"按钮下载文件</li>
-                <li>或复制上方链接，在新标签页中打开</li>
-                <li>手机端可以复制链接通过微信等方式发送给自己</li>
-                <li>链接有效期：当前浏览器会话内有效</li>
-            </ul>
-        </div>
-    </div>
-`;
+            // 经营现状
+            html += `<div class="report-section">
+                <h3>💰 经营现状</h3>
+                <div class="report-item"><span class="report-label">月营业额：</span><span class="report-value">${data.revenue || '未填写'}</span></div>
+                <div class="report-item"><span class="report-label">主要客户群体：</span><span class="report-value">${Array.isArray(data.customerAge) ? data.customerAge.join('、') : '未填写'}</span></div>
+                <div class="report-item"><span class="report-label">平均客单价：</span><span class="report-value">${data.avgPrice ? data.avgPrice + '元' : '未填写'}</span></div>
+                <div class="report-item"><span class="report-label">竞争优势：</span><span class="report-value">${Array.isArray(data.advantages) ? data.advantages.join('、') : '未填写'}</span></div>
+                <div class="report-item"><span class="report-label">经营困难：</span><span class="report-value">${data.challenges || '未填写'}</span></div>
+            </div>`;
 
-// 替换原来的下载按钮
-const originalBtn = document.getElementById('downloadExcelBtn');
-originalBtn.parentNode.replaceChild(downloadSection, originalBtn);
+            // 个人IP基础信息
+            html += `<div class="report-section">
+                <h3>👤 个人IP基础信息</h3>
+                <div class="report-item"><span class="report-label">年龄：</span><span class="report-value">${data.age ? data.age + '岁' : '未填写'}</span></div>
+                <div class="report-item"><span class="report-label">性别：</span><span class="report-value">${data.gender || '未填写'}</span></div>
+                <div class="report-item"><span class="report-label">学历：</span><span class="report-value">${data.education || '未填写'}</span></div>
+                <div class="report-item"><span class="report-label">籍贯：</span><span class="report-value">${data.hometown || '未填写'}</span></div>
+                <div class="report-item"><span class="report-label">在本地生活时间：</span><span class="report-value">${data.localTime ? data.localTime + '年' : '未填写'}</span></div>
+                <div class="report-item"><span class="report-label">开店时长：</span><span class="report-value">${data.shopDuration ? data.shopDuration + '年' : '未填写'}</span></div>
+                <div class="report-item"><span class="report-label">之前工作：</span><span class="report-value">${data.previousWork || '未填写'}</span></div>
+                <div class="report-item"><span class="report-label">选择行业原因：</span><span class="report-value">${data.whyThisBusiness || '未填写'}</span></div>
+            </div>`;
 
-    }
+            // 性格特点
+            html += `<div class="report-section">
+                <h3>🎭 性格特点</h3>
+                <div class="report-item"><span class="report-label">性格特点：</span><span class="report-value">${Array.isArray(data.personality) ? data.personality.join('、') : '未填写'}</span></div>
+                <div class="report-item"><span class="report-label">最大特点：</span><span class="report-value">${data.uniqueTrait || '未填写'}</span></div>
+                <div class="report-item"><span class="report-label">爱好技能：</span><span class="report-value">${Array.isArray(data.hobbies) ? data.hobbies.join('、') : '未填写'}</span></div>
+                <div class="report-item"><span class="report-label">镜头感觉：</span><span class="report-value">${data.cameraFeeling || '未填写'}</span></div>
+                <div class="report-item"><span class="report-label">语言特点：</span><span class="report-value">${Array.isArray(data.languageStyle) ? data.languageStyle.join('、') : '未填写'}</span></div>
+                <div class="report-item"><span class="report-label">口头禅：</span><span class="report-value">${data.catchphrase || '未填写'}</span></div>
+            </div>`;
 
-    // 初始化进度条
-    updateProgress();
-// 添加复制到剪贴板功能
-function copyToClipboard(text) {
-    if (navigator.clipboard && window.isSecureContext) {
-        // 现代浏览器
-        navigator.clipboard.writeText(text).then(() => {
-            showCopySuccess();
-        }).catch(err => {
-            fallbackCopyTextToClipboard(text);
-        });
-    } else {
-        // 兼容老浏览器
-        fallbackCopyTextToClipboard(text);
-    }
-}
+            // 创业故事
+            html += `<div class="report-section">
+                <h3>📖 创业故事</h3>
+                <div class="report-item"><span class="report-label">开店原因：</span><span class="report-value">${data.whyStartBusiness || '未填写'}</span></div>
+                <div class="report-item"><span class="report-label">难忘经历：</span><span class="report-value">${data.memorableEvent || '未填写'}</span></div>
+                <div class="report-item"><span class="report-label">成就时刻：</span><span class="report-value">${data.proudMoment || '未填写'}</span></div>
+                <div class="report-item"><span class="report-label">困难坚持：</span><span class="report-value">${data.difficultTime || '未填写'}</span></div>
+                <div class="report-item"><span class="report-label">客户故事：</span><span class="report-value">${data.customerStory || '未填写'}</span></div>
+                <div class="report-item"><span class="report-label">家人态度：</span><span class="report-value">${data.familySupport || '未填写'}</span></div>
+            </div>`;
 
-function fallbackCopyTextToClipboard(text) {
-    const textArea = document.createElement("textarea");
-    textArea.value = text;
-    textArea.style.top = "0";
-    textArea.style.left = "0";
-    textArea.style.position = "fixed";
-    textArea.style.opacity = "0";
-    
-    document.body.appendChild(textArea);
-    textArea.focus();
-    textArea.select();
-    
-    try {
-        document.execCommand('copy');
-        showCopySuccess();
-    } catch (err) {
-        alert('复制失败，请手动复制链接');
-    }
-    
-    document.body.removeChild(textArea);
-}
+            // IP定位意向
+            html += `<div class="report-section">
+                <h3>🎯 IP定位意向</h3>
+                <div class="report-item"><span class="report-label">期望形象：</span><span class="report-value">${Array.isArray(data.desiredImage) ? data.desiredImage.join('、') : '未填写'}</span></div>
+                <div class="report-item"><span class="report-label">传递价值：</span><span class="report-value">${data.valueToDeliver || '未填写'}</span></div>
+                <div class="report-item"><span class="report-label">内容偏好：</span><span class="report-value">${Array.isArray(data.contentPreference) ? data.contentPreference.join('、') : '未填写'}</span></div>
+                <div class="report-item"><span class="report-label">避免内容：</span><span class="report-value">${data.avoidContent || '未填写'}</span></div>
+            </div>`;
 
-function showCopySuccess() {
-    const toast = document.createElement('div');
-    toast.innerHTML = '✅ 链接已复制到剪贴板';
-    toast.style.cssText = `
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background: #28a745;
-        color: white;
-        padding: 12px 24px;
-        border-radius: 6px;
-        z-index: 9999;
-        font-size: 14px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-    `;
-    
-    document.body.appendChild(toast);
-    
-    setTimeout(() => {
-        document.body.removeChild(toast);
-    }, 2000);
-}
+            // 合作期待
+            html += `<div class="report-section">
+                <h3>🤝 合作期待</h3>
+                <div class="report-item"><span class="report-label">主要目标：</span><span class="report-value">${data.mainGoal || '未填写'}</span></div>
+                <div class="report-item"><span class="report-label">期待时间：</span><span class="report-value">${data.expectedTime || '未填写'}</span></div>
+                <div class="report-item"><span class="report-label">投入预算：</span><span class="report-value">${data.budget || '未填写'}</span></div>
+                <div class="report-item"><span class="report-label">时间投入：</span><span class="report-value">${data.timeInvestment || '未填写'}</span></div>
+                <div class="report-item"><span class="report-label">出镜意愿：</span><span class="report-value">${data.appearanceWillingness || '未填写'}</span></div>
+                <div class="report-item"><span class="report-label">拍摄场景：</span><span class="report-value">${Array.isArray(data.filmingScenes) ? data.filmingScenes.join('、') : '未填写'}</span></div>
+                <div class="report-item"><span class="report-label">每周拍摄时间：</span><span class="report-value">${data.weeklyFilmingTime ? data.weeklyFilmingTime + '小时' : '未填写'}</span></div>
+            </div>`;
 
-</script>
-</body> </html>
+            // 产品服务特色
+            html += `<div class="report-section">
+                <h3>🛍️ 产品/服务特色</h3>
+                <div class="report-item"><span class="report-label">主推产品：</span><span class="report-value">${data.mainProducts || '未填写'}</span></div>
+                <div class="report-item"><span class="report-label">适合推广产品：</span><span class="report-value">${data.suitableProducts || '未填写'}</span></div>
+                <div class="report-item"><span class="report-label">产品故事：</span><span class="report-value">${data.uniqueStory || '未填写'}</span></div>
+                <div class="report-item"><span class="report-label">营销经验：</span><span class="report-value">${data.marketingExperience || '未填写'}</span></div>
+                <div class="report-item"><span class="report-label">拍摄场景：</span><span class="report-value">${Array.isArray(data.shopScenes) ? data.shopScenes.join('、') : '未填写'}</span></div>
+            </div>`;
+
+            // 发展目标
+            html += `<div class="report-section">
+                <h3>🎊 发展目标</h3>
+                <div class="report-item"><span class="report-label">短期目标：</span><span class="report-value">${data.shortTermGoals || '未填写'}</span></div>
+                <div class="report-item"><span class="report-label">长期愿景：</span><span class="report-value">${data.longTermVision || '未填写'}</span></div>
+                <div class="report-item"><span class="report-label">IP目标：</span><span class="report-value">${Array.isArray(data.ipGoals) ? data.ipGoals.join('、') : '未填写'}</span></div>
+                <div class="report-item"><span class="report-label">目标受众：</span><span class="report-value">${Array.isArray(data.targetAudience) ? data.targetAudience.join('、') : '未填写'}</span></div>
+                <div class="report-item"><span class="report-label">补充信息：</span><span class="report-value">${data.additionalInfo || '未填写'}</span></div>
+            </div>`;
+
+            return html;
+        }
+
+        function copyReport() {
+            // 获取报告的纯文本内容
+            const reportElement = document.getElementById('reportText');
+            let textContent = '';
+            
+            // 遍历所有报告部分
+            const sections = reportElement.querySelectorAll('.report-section');
+            sections.forEach(section => {
+                const title = section.querySelector('h3').textContent;
+                textContent += title + '\n';
+                textContent += '='.repeat(title.length) + '\n\n';
+                
+                const items = section.querySelectorAll('.report-item');
+                items.forEach(item => {
+                    const label = item.querySelector('.report-label').textContent;
+                    const value = item.querySelector('.report-value').textContent;
+                    textContent += label + ' ' + value + '\n';
+                });
+                textContent += '\n';
+            });
+            
+            // 添加头部信息
+            const fullReport = `实体店抖音代运营合作调研报告
+${'='.repeat(50)}
+生成时间：${new Date().toLocaleString()}
+
+${textContent}
+
+报告说明：
+本报告基于您填写的调研信息自动生成，为后续的抖音代运营合作提供参考依据。
+我们将根据此报告为您制定个性化的运营策略和IP打造方案。
+
+联系方式：
+如有任何疑问，请联系我们的专业团队。
+我们会在2个工作日内与您联系，讨论具体的合作方案。`;
+            
+            // 复制到剪贴板
+            navigator.clipboard.writeText(fullReport).then(() => {
+                showCopyNotification();
+            }).catch(() => {
+                // 备用方案
+                const textArea = document.createElement('textarea');
+                textArea.value = fullReport;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+                showCopyNotification();
+            });
+        }
+
+        function showCopyNotification() {
+            const notification = document.getElementById('copyNotification');
+            notification.classList.add('show');
+            setTimeout(() => {
+                notification.classList.remove('show');
+            }, 3000);
+        }
+
+        // 初始化进度条
+        updateProgress();
+    </script>
+</body>
+</html>
