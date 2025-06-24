@@ -1,0 +1,1643 @@
+{\rtf1\ansi\ansicpg936\cocoartf2822
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 HelveticaNeue-Bold;\f1\fnil\fcharset0 HelveticaNeue;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\deftab560
+\pard\pardeftab560\partightenfactor0
+
+\f0\b\fs40 \cf0 <!DOCTYPE html>\
+<html lang="zh-CN">\
+<head>\
+    <meta charset="UTF-8">\
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">\
+    <title>\uc0\u23454 \u20307 \u24215 \u25238 \u38899 \u20195 \u36816 \u33829 \u21512 \u20316 \u35843 \u30740 </title>\
+    <style>\
+        * \{\
+            margin: 0;\
+            padding: 0;\
+            box-sizing: border-box;\
+        \}\
+\
+        body \{\
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;\
+            line-height: 1.6;\
+            color: #333;\
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);\
+            min-height: 100vh;\
+        \}\
+\
+        .container \{\
+            max-width: 800px;\
+            margin: 0 auto;\
+            padding: 20px;\
+        \}\
+\
+        .header \{\
+            text-align: center;\
+            color: white;\
+            margin-bottom: 30px;\
+        \}\
+\
+        .header h1 \{\
+            font-size: 2.5em;\
+            margin-bottom: 10px;\
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);\
+        \}\
+\
+        .header p \{\
+            font-size: 1.1em;\
+            opacity: 0.9;\
+        \}\
+\
+        .form-container \{\
+            background: white;\
+            border-radius: 15px;\
+            padding: 40px;\
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);\
+            margin-bottom: 30px;\
+        \}\
+\
+        .section \{\
+            margin-bottom: 40px;\
+            padding-bottom: 30px;\
+            border-bottom: 2px solid #f0f0f0;\
+        \}\
+\
+        .section:last-child \{\
+            border-bottom: none;\
+        \}\
+\
+        .section-title \{\
+            font-size: 1.5em;\
+            color: #667eea;\
+            margin-bottom: 20px;\
+            display: flex;\
+            align-items: center;\
+            gap: 10px;\
+        \}\
+\
+        .section-title::before \{\
+            content: '';\
+            width: 4px;\
+            height: 25px;\
+            background: linear-gradient(135deg, #667eea, #764ba2);\
+            border-radius: 2px;\
+        \}\
+\
+        .form-group \{\
+            margin-bottom: 25px;\
+        \}\
+\
+        .form-group label \{\
+            display: block;\
+            margin-bottom: 8px;\
+            font-weight: 600;\
+            color: #555;\
+        \}\
+\
+        .required \{\
+            color: #e74c3c;\
+        \}\
+\
+        input[type="text"],\
+        input[type="email"],\
+        input[type="tel"],\
+        input[type="number"],\
+        select,\
+        textarea \{\
+            width: 100%;\
+            padding: 12px 15px;\
+            border: 2px solid #e0e0e0;\
+            border-radius: 8px;\
+            font-size: 16px;\
+            transition: all 0.3s ease;\
+        \}\
+\
+        input[type="text"]:focus,\
+        input[type="email"]:focus,\
+        input[type="tel"]:focus,\
+        input[type="number"]:focus,\
+        select:focus,\
+        textarea:focus \{\
+            outline: none;\
+            border-color: #667eea;\
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);\
+        \}\
+\
+        textarea \{\
+            resize: vertical;\
+            min-height: 100px;\
+        \}\
+\
+        .checkbox-group,\
+        .radio-group \{\
+            display: grid;\
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));\
+            gap: 10px;\
+            margin-top: 10px;\
+        \}\
+\
+        .checkbox-item,\
+        .radio-item \{\
+            display: flex;\
+            align-items: center;\
+            gap: 8px;\
+            padding: 10px;\
+            border: 2px solid #f0f0f0;\
+            border-radius: 8px;\
+            cursor: pointer;\
+            transition: all 0.3s ease;\
+        \}\
+\
+        .checkbox-item:hover,\
+        .radio-item:hover \{\
+            border-color: #667eea;\
+            background-color: #f8f9ff;\
+        \}\
+\
+        .checkbox-item input[type="checkbox"],\
+        .radio-item input[type="radio"] \{\
+            width: auto;\
+            margin: 0;\
+        \}\
+\
+        .other-input \{\
+            margin-top: 10px;\
+            display: none;\
+        \}\
+\
+        .other-input.show \{\
+            display: block;\
+        \}\
+\
+        .input-with-suffix \{\
+            position: relative;\
+            display: flex;\
+            align-items: center;\
+        \}\
+\
+        .input-with-suffix input \{\
+            flex: 1;\
+            border-radius: 8px 0 0 8px;\
+            border-right: none;\
+        \}\
+\
+        .input-suffix \{\
+            background: #f8f9fa;\
+            border: 2px solid #e0e0e0;\
+            border-left: none;\
+            border-radius: 0 8px 8px 0;\
+            padding: 12px 15px;\
+            font-size: 16px;\
+            color: #666;\
+            white-space: nowrap;\
+        \}\
+\
+        .progress-bar \{\
+            width: 100%;\
+            height: 6px;\
+            background-color: #f0f0f0;\
+            border-radius: 3px;\
+            margin-bottom: 30px;\
+            overflow: hidden;\
+        \}\
+\
+        .progress-fill \{\
+            height: 100%;\
+            background: linear-gradient(90deg, #667eea, #764ba2);\
+            width: 0%;\
+            transition: width 0.3s ease;\
+            border-radius: 3px;\
+        \}\
+\
+        .submit-btn \{\
+            width: 100%;\
+            padding: 15px;\
+            background: linear-gradient(135deg, #667eea, #764ba2);\
+            color: white;\
+            border: none;\
+            border-radius: 10px;\
+            font-size: 18px;\
+            font-weight: 600;\
+            cursor: pointer;\
+            transition: all 0.3s ease;\
+            margin-top: 30px;\
+        \}\
+\
+        .submit-btn:hover \{\
+            transform: translateY(-2px);\
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);\
+        \}\
+\
+        .submit-btn:disabled \{\
+            opacity: 0.6;\
+            cursor: not-allowed;\
+            transform: none;\
+        \}\
+\
+        .loading \{\
+            display: none;\
+            text-align: center;\
+            padding: 40px;\
+        \}\
+\
+        .loading-spinner \{\
+            width: 50px;\
+            height: 50px;\
+            border: 4px solid #f3f3f3;\
+            border-top: 4px solid #667eea;\
+            border-radius: 50%;\
+            animation: spin 1s linear infinite;\
+            margin: 0 auto 20px;\
+        \}\
+\
+        @keyframes spin \{\
+            0% \{ transform: rotate(0deg); \}\
+            100% \{ transform: rotate(360deg); \}\
+        \}\
+\
+        .success-message \{\
+            display: none;\
+            text-align: center;\
+            padding: 40px;\
+            color: #27ae60;\
+        \}\
+\
+        .success-message h2 \{\
+            margin-bottom: 20px;\
+        \}\
+\
+        .download-btn \{\
+            display: inline-block;\
+            padding: 12px 30px;\
+            background: #27ae60;\
+            color: white;\
+            text-decoration: none;\
+            border-radius: 8px;\
+            font-weight: 600;\
+            transition: all 0.3s ease;\
+            margin: 10px;\
+        \}\
+\
+        .download-btn:hover \{\
+            background: #219a52;\
+            transform: translateY(-2px);\
+        \}\
+\
+        .download-btn.excel \{\
+            background: #1e7e34;\
+        \}\
+\
+        .download-btn.excel:hover \{\
+            background: #155724;\
+        \}\
+\
+        @media (max-width: 768px) \{\
+            .container \{\
+                padding: 10px;\
+            \}\
+\
+            .form-container \{\
+                padding: 20px;\
+            \}\
+\
+            .header h1 \{\
+                font-size: 2em;\
+            \}\
+\
+            .checkbox-group,\
+            .radio-group \{\
+                grid-template-columns: 1fr;\
+            \}\
+        \}\
+    </style>\
+</head>\
+<body>\
+    <div class="container">\
+        <div class="header">\
+            <h1>
+\f1\b0 \uc0\u55356 \u57322 
+\f0\b  \uc0\u23454 \u20307 \u24215 \u25238 \u38899 \u20195 \u36816 \u33829 \u21512 \u20316 \u35843 \u30740 </h1>\
+            <p>\uc0\u24215 \u38138 \u36816 \u33829  + \u20010 \u20154 IP\u25171 \u36896 \u21452 \u37325 \u31574 \u30053 </p>\
+        </div>\
+\
+        <div class="form-container">\
+            <div class="progress-bar">\
+                <div class="progress-fill" id="progressFill"></div>\
+            </div>\
+\
+            <form id="surveyForm">\
+                <!-- \uc0\u31532 \u19968 \u37096 \u20998 \u65306 \u24215 \u38138 \u22522 \u26412 \u20449 \u24687  -->\
+                <div class="section">\
+                    <h2 class="section-title">
+\f1\b0 \uc0\u55356 \u57322 
+\f0\b  \uc0\u24215 \u38138 \u22522 \u26412 \u20449 \u24687 </h2>\
+                    \
+                    <div class="form-group">\
+                        <label for="shopName">\uc0\u24215 \u38138 \u21517 \u31216  <span class="required">*</span></label>\
+                        <input type="text" id="shopName" name="shopName" required>\
+                    </div>\
+\
+                    <div class="form-group">\
+                        <label for="business">\uc0\u20027 \u33829 \u19994 \u21153  <span class="required">*</span></label>\
+                        <input type="text" id="business" name="business" required>\
+                    </div>\
+\
+                    <div class="form-group">\
+                        <label for="address">\uc0\u24215 \u38138 \u22320 \u22336  <span class="required">*</span></label>\
+                        <input type="text" id="address" name="address" required>\
+                    </div>\
+\
+                    <div class="form-group">\
+                        <label for="area">\uc0\u33829 \u19994 \u38754 \u31215 </label>\
+                        <div class="input-with-suffix">\
+                            <input type="number" id="area" name="area">\
+                            <span class="input-suffix">\uc0\u24179 \u26041 \u31859 </span>\
+                        </div>\
+                    </div>\
+\
+                    <div class="form-group">\
+                        <label for="openTime">\uc0\u24320 \u24215 \u26102 \u38388 </label>\
+                        <input type="text" id="openTime" name="openTime" placeholder="\uc0\u20363 \u65306 2020\u24180 3\u26376 ">\
+                    </div>\
+\
+                    <div class="form-group">\
+                        <label for="staffCount">\uc0\u21592 \u24037 \u20154 \u25968 </label>\
+                        <div class="input-with-suffix">\
+                            <input type="number" id="staffCount" name="staffCount">\
+                            <span class="input-suffix">\uc0\u20154 </span>\
+                        </div>\
+                    </div>\
+\
+                    <div class="form-group">\
+                        <label for="contactName">\uc0\u32852 \u31995 \u20154 \u22995 \u21517  <span class="required">*</span></label>\
+                        <input type="text" id="contactName" name="contactName" required>\
+                    </div>\
+\
+                    <div class="form-group">\
+                        <label for="position">\uc0\u32844 \u20301  <span class="required">*</span></label>\
+                        <input type="text" id="position" name="position" required>\
+                    </div>\
+\
+                    <div class="form-group">\
+                        <label for="phone">\uc0\u32852 \u31995 \u30005 \u35805  <span class="required">*</span></label>\
+                        <input type="tel" id="phone" name="phone" required>\
+                    </div>\
+\
+                    <div class="form-group">\
+                        <label for="wechat">\uc0\u24494 \u20449 \u21495 </label>\
+                        <input type="text" id="wechat" name="wechat">\
+                    </div>\
+                </div>\
+\
+                <!-- \uc0\u31532 \u20108 \u37096 \u20998 \u65306 \u32463 \u33829 \u29616 \u29366  -->\
+                <div class="section">\
+                    <h2 class="section-title">
+\f1\b0 \uc0\u55357 \u56496 
+\f0\b  \uc0\u32463 \u33829 \u29616 \u29366 </h2>\
+                    \
+                    <div class="form-group">\
+                        <label>\uc0\u26376 \u33829 \u19994 \u39069 \u33539 \u22260  <span class="required">*</span></label>\
+                        <div class="radio-group">\
+                            <div class="radio-item">\
+                                <input type="radio" id="revenue1" name="revenue" value="5\uc0\u19975 \u20197 \u19979 " required>\
+                                <label for="revenue1">5\uc0\u19975 \u20197 \u19979 </label>\
+                            </div>\
+                            <div class="radio-item">\
+                                <input type="radio" id="revenue2" name="revenue" value="5-10\uc0\u19975 " required>\
+                                <label for="revenue2">5-10\uc0\u19975 </label>\
+                            </div>\
+                            <div class="radio-item">\
+                                <input type="radio" id="revenue3" name="revenue" value="10-20\uc0\u19975 " required>\
+                                <label for="revenue3">10-20\uc0\u19975 </label>\
+                            </div>\
+                            <div class="radio-item">\
+                                <input type="radio" id="revenue4" name="revenue" value="20-50\uc0\u19975 " required>\
+                                <label for="revenue4">20-50\uc0\u19975 </label>\
+                            </div>\
+                            <div class="radio-item">\
+                                <input type="radio" id="revenue5" name="revenue" value="50\uc0\u19975 \u20197 \u19978 " required>\
+                                <label for="revenue5">50\uc0\u19975 \u20197 \u19978 </label>\
+                            </div>\
+                        </div>\
+                    </div>\
+\
+                    <div class="form-group">\
+                        <label>\uc0\u20027 \u35201 \u23458 \u25143 \u32676 \u20307 \u65288 \u21487 \u22810 \u36873 \u65289 </label>\
+                        <div class="checkbox-group">\
+                            <div class="checkbox-item">\
+                                <input type="checkbox" id="age1" name="customerAge" value="18-25\uc0\u23681 ">\
+                                <label for="age1">18-25\uc0\u23681 </label>\
+                            </div>\
+                            <div class="checkbox-item">\
+                                <input type="checkbox" id="age2" name="customerAge" value="26-35\uc0\u23681 ">\
+                                <label for="age2">26-35\uc0\u23681 </label>\
+                            </div>\
+                            <div class="checkbox-item">\
+                                <input type="checkbox" id="age3" name="customerAge" value="36-45\uc0\u23681 ">\
+                                <label for="age3">36-45\uc0\u23681 </label>\
+                            </div>\
+                            <div class="checkbox-item">\
+                                <input type="checkbox" id="age4" name="customerAge" value="46-55\uc0\u23681 ">\
+                                <label for="age4">46-55\uc0\u23681 </label>\
+                            </div>\
+                            <div class="checkbox-item">\
+                                <input type="checkbox" id="age5" name="customerAge" value="55\uc0\u23681 \u20197 \u19978 ">\
+                                <label for="age5">55\uc0\u23681 \u20197 \u19978 </label>\
+                            </div>\
+                            <div class="checkbox-item">\
+                                <input type="checkbox" id="ageOther" name="customerAge" value="\uc0\u20854 \u20182 " onchange="toggleOtherInput('ageOther', 'ageOtherInput')">\
+                                <label for="ageOther">\uc0\u20854 \u20182 </label>\
+                            </div>\
+                        </div>\
+                        <div class="other-input" id="ageOtherInput">\
+                            <input type="text" name="customerAgeOther" placeholder="\uc0\u35831 \u35828 \u26126 \u20854 \u20182 \u23458 \u25143 \u32676 \u20307 ...">\
+                        </div>\
+                    </div>\
+\
+                    <div class="form-group">\
+                        <label for="avgPrice">\uc0\u24179 \u22343 \u23458 \u21333 \u20215 </label>\
+                        <div class="input-with-suffix">\
+                            <input type="number" id="avgPrice" name="avgPrice">\
+                            <span class="input-suffix">\uc0\u20803 </span>\
+                        </div>\
+                    </div>\
+\
+                    <div class="form-group">\
+                        <label>\uc0\u19982 \u31454 \u20105 \u23545 \u25163 \u30456 \u27604 \u65292 \u24744 \u30340 \u20248 \u21183 \u26159 \u65288 \u21487 \u22810 \u36873 \u65289 </label>\
+                        <div class="checkbox-group">\
+                            <div class="checkbox-item">\
+                                <input type="checkbox" id="adv1" name="advantages" value="\uc0\u20215 \u26684 \u20248 \u21183 ">\
+                                <label for="adv1">\uc0\u20215 \u26684 \u20248 \u21183 </label>\
+                            </div>\
+                            <div class="checkbox-item">\
+                                <input type="checkbox" id="adv2" name="advantages" value="\uc0\u20135 \u21697 \u36136 \u37327 ">\
+                                <label for="adv2">\uc0\u20135 \u21697 \u36136 \u37327 </label>\
+                            </div>\
+                            <div class="checkbox-item">\
+                                <input type="checkbox" id="adv3" name="advantages" value="\uc0\u26381 \u21153 \u27700 \u24179 ">\
+                                <label for="adv3">\uc0\u26381 \u21153 \u27700 \u24179 </label>\
+                            </div>\
+                            <div class="checkbox-item">\
+                                <input type="checkbox" id="adv4" name="advantages" value="\uc0\u22320 \u29702 \u20301 \u32622 ">\
+                                <label for="adv4">\uc0\u22320 \u29702 \u20301 \u32622 </label>\
+                            </div>\
+                            <div class="checkbox-item">\
+                                <input type="checkbox" id="adv5" name="advantages" value="\uc0\u35013 \u20462 \u29615 \u22659 ">\
+                                <label for="adv5">\uc0\u35013 \u20462 \u29615 \u22659 </label>\
+                            </div>\
+                            <div class="checkbox-item">\
+                                <input type="checkbox" id="adv6" name="advantages" value="\uc0\u21697 \u29260 \u30693 \u21517 \u24230 ">\
+                                <label for="adv6">\uc0\u21697 \u29260 \u30693 \u21517 \u24230 </label>\
+                            </div>\
+                            <div class="checkbox-item">\
+                                <input type="checkbox" id="advOther" name="advantages" value="\uc0\u20854 \u20182 " onchange="toggleOtherInput('advOther', 'advOtherInput')">\
+                                <label for="advOther">\uc0\u20854 \u20182 </label>\
+                            </div>\
+                        </div>\
+                        <div class="other-input" id="advOtherInput">\
+                            <input type="text" name="advantagesOther" placeholder="\uc0\u35831 \u35828 \u26126 \u20854 \u20182 \u20248 \u21183 ...">\
+                        </div>\
+                    </div>\
+\
+                    <div class="form-group">\
+                        <label for="challenges">\uc0\u30446 \u21069 \u38754 \u20020 \u30340 \u20027 \u35201 \u32463 \u33829 \u22256 \u38590 </label>\
+                        <textarea id="challenges" name="challenges" placeholder="\uc0\u35831 \u35814 \u32454 \u25551 \u36848 ..."></textarea>\
+                    </div>\
+                </div>\
+\
+                <!-- \uc0\u31532 \u19977 \u37096 \u20998 \u65306 \u20010 \u20154 IP\u22522 \u30784 \u20449 \u24687  -->\
+                <div class="section">\
+                    <h2 class="section-title">
+\f1\b0 \uc0\u55357 \u56420 
+\f0\b  \uc0\u20010 \u20154 IP\u22522 \u30784 \u20449 \u24687 </h2>\
+                    \
+                    <div class="form-group">\
+                        <label for="age">\uc0\u24180 \u40836  <span class="required">*</span></label>\
+                        <div class="input-with-suffix">\
+                            <input type="number" id="age" name="age" required min="18" max="80">\
+                            <span class="input-suffix">\uc0\u23681 </span>\
+                        </div>\
+                    </div>\
+\
+                    <div class="form-group">\
+                        <label>\uc0\u24615 \u21035  <span class="required">*</span></label>\
+                        <div class="radio-group">\
+                            <div class="radio-item">\
+                                <input type="radio" id="male" name="gender" value="\uc0\u30007 " required>\
+                                <label for="male">\uc0\u30007 </label>\
+                            </div>\
+                            <div class="radio-item">\
+                                <input type="radio" id="female" name="gender" value="\uc0\u22899 " required>\
+                                <label for="female">\uc0\u22899 </label>\
+                            </div>\
+                        </div>\
+                    </div>\
+\
+                    <div class="form-group">\
+                        <label>\uc0\u23398 \u21382 </label>\
+                        <div class="radio-group">\
+                            <div class="radio-item">\
+                                <input type="radio" id="edu1" name="education" value="\uc0\u39640 \u20013 \u21450 \u20197 \u19979 ">\
+                                <label for="edu1">\uc0\u39640 \u20013 \u21450 \u20197 \u19979 </label>\
+                            </div>\
+                            <div class="radio-item">\
+                                <input type="radio" id="edu2" name="education" value="\uc0\u22823 \u19987 ">\
+                                <label for="edu2">\uc0\u22823 \u19987 </label>\
+                            </div>\
+                            <div class="radio-item">\
+                                <input type="radio" id="edu3" name="education" value="\uc0\u26412 \u31185 ">\
+                                <label for="edu3">\uc0\u26412 \u31185 </label>\
+                            </div>\
+                            <div class="radio-item">\
+                                <input type="radio" id="edu4" name="education" value="\uc0\u30805 \u22763 \u21450 \u20197 \u19978 ">\
+                                <label for="edu4">\uc0\u30805 \u22763 \u21450 \u20197 \u19978 </label>\
+                            </div>\
+                        </div>\
+                    </div>\
+\
+                    <div class="form-group">\
+                        <label for="hometown">\uc0\u31821 \u36143 </label>\
+                        <input type="text" id="hometown" name="hometown">\
+                    </div>\
+\
+                    <div class="form-group">\
+                        <label for="localTime">\uc0\u22312 \u26412 \u22320 \u29983 \u27963 \u26102 \u38388 </label>\
+                        <div class="input-with-suffix">\
+                            <input type="number" id="localTime" name="localTime">\
+                            <span class="input-suffix">\uc0\u24180 </span>\
+                        </div>\
+                    </div>\
+\
+                    <div class="form-group">\
+                        <label for="shopDuration">\uc0\u24320 \u36825 \u23478 \u24215 \u22810 \u20037 \u20102 </label>\
+                        <div class="input-with-suffix">\
+                            <input type="number" id="shopDuration" name="shopDuration" step="0.5">\
+                            <span class="input-suffix">\uc0\u24180 </span>\
+                        </div>\
+                    </div>\
+\
+                    <div class="form-group">\
+                        <label for="previousWork">\uc0\u20043 \u21069 \u20570 \u36807 \u20160 \u20040 \u24037 \u20316 </label>\
+                        <textarea id="previousWork" name="previousWork" placeholder="\uc0\u35831 \u31616 \u21333 \u25551 \u36848 \u24744 \u30340 \u24037 \u20316 \u32463 \u21382 ..."></textarea>\
+                    </div>\
+\
+                    <div class="form-group">\
+                        <label for="whyThisBusiness">\uc0\u20026 \u20160 \u20040 \u36873 \u25321 \u36825 \u20010 \u34892 \u19994 </label>\
+                        <textarea id="whyThisBusiness" name="whyThisBusiness" placeholder="\uc0\u35831 \u20998 \u20139 \u24744 \u36873 \u25321 \u36825 \u20010 \u34892 \u19994 \u30340 \u21407 \u22240 ..."></textarea>\
+                    </div>\
+                </div>\
+\
+                <!-- \uc0\u31532 \u22235 \u37096 \u20998 \u65306 \u24615 \u26684 \u29305 \u28857  -->\
+                <div class="section">\
+                    <h2 class="section-title">
+\f1\b0 \uc0\u55356 \u57261 
+\f0\b  \uc0\u24615 \u26684 \u29305 \u28857 </h2>\
+                    \
+                    <div class="form-group">\
+                        <label>\uc0\u26379 \u21451 \u20204 \u36890 \u24120 \u24590 \u20040 \u24418 \u23481 \u24744 \u65311 \u65288 \u21487 \u22810 \u36873 \u65289 </label>\
+                        <div class="checkbox-group">\
+                            <div class="checkbox-item">\
+                                <input type="checkbox" id="char1" name="personality" value="\uc0\u24189 \u40664 \u39118 \u36259 ">\
+                                <label for="char1">\uc0\u24189 \u40664 \u39118 \u36259 </label>\
+                            </div>\
+                            <div class="checkbox-item">\
+                                <input type="checkbox" id="char2" name="personality" value="\uc0\u35748 \u30495 \u36127 \u36131 ">\
+                                <label for="char2">\uc0\u35748 \u30495 \u36127 \u36131 </label>\
+                            </div>\
+                            <div class="checkbox-item">\
+                                <input type="checkbox" id="char3" name="personality" value="\uc0\u28909 \u24773 \u24320 \u26391 ">\
+                                <label for="char3">\uc0\u28909 \u24773 \u24320 \u26391 </label>\
+                            </div>\
+                            <div class="checkbox-item">\
+                                <input type="checkbox" id="char4" name="personality" value="\uc0\u27785 \u31283 \u20869 \u25947 ">\
+                                <label for="char4">\uc0\u27785 \u31283 \u20869 \u25947 </label>\
+                            </div>\
+                            <div class="checkbox-item">\
+                                <input type="checkbox" id="char5" name="personality" value="\uc0\u19987 \u19994 \u20005 \u35880 ">\
+                                <label for="char5">\uc0\u19987 \u19994 \u20005 \u35880 </label>\
+                            </div>\
+                            <div class="checkbox-item">\
+                                <input type="checkbox" id="char6" name="personality" value="\uc0\u20146 \u21644 \u21147 \u24378 ">\
+                                <label for="char6">\uc0\u20146 \u21644 \u21147 \u24378 </label>\
+                            </div>\
+                            <div class="checkbox-item">\
+                                <input type="checkbox" id="charOther" name="personality" value="\uc0\u20854 \u20182 " onchange="toggleOtherInput('charOther', 'charOtherInput')">\
+                                <label for="charOther">\uc0\u20854 \u20182 </label>\
+                            </div>\
+                        </div>\
+                        <div class="other-input" id="charOtherInput">\
+                            <input type="text" name="personalityOther" placeholder="\uc0\u35831 \u35828 \u26126 \u20854 \u20182 \u24615 \u26684 \u29305 \u28857 ...">\
+                        </div>\
+                    </div>\
+\
+                    <div class="form-group">\
+                        <label for="uniqueTrait">\uc0\u24744 \u35273 \u24471 \u33258 \u24049 \u26368 \u22823 \u30340 \u29305 \u28857 \u26159 </label>\
+                        <textarea id="uniqueTrait" name="uniqueTrait" placeholder="\uc0\u35831 \u25551 \u36848 \u24744 \u35748 \u20026 \u33258 \u24049 \u26368 \u31361 \u20986 \u30340 \u29305 \u28857 ..."></textarea>\
+                    </div>\
+\
+                    <div class="form-group">\
+                        <label>\uc0\u26377 \u20160 \u20040 \u29305 \u27530 \u30340 \u29233 \u22909 \u25110 \u25216 \u33021 \u21527 \u65311 \u65288 \u21487 \u22810 \u36873 \u65289 </label>\
+                        <div class="checkbox-group">\
+                            <div class="checkbox-item">\
+                                <input type="checkbox" id="hobby1" name="hobbies" value="\uc0\u21809 \u27468 ">\
+                                <label for="hobby1">\uc0\u21809 \u27468 </label>\
+                            </div>\
+                            <div class="checkbox-item">\
+                                <input type="checkbox" id="hobby2" name="hobbies" value="\uc0\u36339 \u33310 ">\
+                                <label for="hobby2">\uc0\u36339 \u33310 </label>\
+                            </div>\
+                            <div class="checkbox-item">\
+                                <input type="checkbox" id="hobby3" name="hobbies" value="\uc0\u36816 \u21160 ">\
+                                <label for="hobby3">\uc0\u36816 \u21160 </label>\
+                            </div>\
+                            <div class="checkbox-item">\
+                                <input type="checkbox" id="hobby4" name="hobbies" value="\uc0\u25163 \u24037 ">\
+                                <label for="hobby4">\uc0\u25163 \u24037 </label>\
+                            </div>\
+                            <div class="checkbox-item">\
+                                <input type="checkbox" id="hobby5" name="hobbies" value="\uc0\u28921 \u39274 ">\
+                                <label for="hobby5">\uc0\u28921 \u39274 </label>\
+                            </div>\
+                            <div class="checkbox-item">\
+                                <input type="checkbox" id="hobby6" name="hobbies" value="\uc0\u25668 \u24433 ">\
+                                <label for="hobby6">\uc0\u25668 \u24433 </label>\
+                            </div>\
+                            <div class="checkbox-item">\
+                                <input type="checkbox" id="hobby7" name="hobbies" value="\uc0\u20070 \u27861 ">\
+                                <label for="hobby7">\uc0\u20070 \u27861 </label>\
+                            </div>\
+                            <div class="checkbox-item">\
+                                <input type="checkbox" id="hobby8" name="hobbies" value="\uc0\u20048 \u22120 ">\
+                                <label for="hobby8">\uc0\u20048 \u22120 </label>\
+                            </div>\
+                            <div class="checkbox-item">\
+                                <input type="checkbox" id="hobbyOther" name="hobbies" value="\uc0\u20854 \u20182 " onchange="toggleOtherInput('hobbyOther', 'hobbyOtherInput')">\
+                                <label for="hobbyOther">\uc0\u20854 \u20182 </label>\
+                            </div>\
+                        </div>\
+                        <div class="other-input" id="hobbyOtherInput">\
+                            <input type="text" name="hobbiesOther" placeholder="\uc0\u35831 \u35828 \u26126 \u20854 \u20182 \u29233 \u22909 \u25110 \u25216 \u33021 ...">\
+                        </div>\
+                    </div>\
+\
+                    <div class="form-group">\
+                        <label>\uc0\u22312 \u38236 \u22836 \u21069 \u30340 \u24863 \u35273 </label>\
+                        <div class="radio-group">\
+                            <div class="radio-item">\
+                                <input type="radio" id="camera1" name="cameraFeeling" value="\uc0\u24456 \u33258 \u28982 \u65292 \u21916 \u27426 \u34920 \u36798 ">\
+                                <label for="camera1">\uc0\u24456 \u33258 \u28982 \u65292 \u21916 \u27426 \u34920 \u36798 </label>\
+                            </div>\
+                            <div class="radio-item">\
+                                <input type="radio" id="camera2" name="cameraFeeling" value="\uc0\u31245 \u24494 \u32039 \u24352 \u20294 \u33021 \u36866 \u24212 ">\
+                                <label for="camera2">\uc0\u31245 \u24494 \u32039 \u24352 \u20294 \u33021 \u36866 \u24212 </label>\
+                            </div>\
+                            <div class="radio-item">\
+                                <input type="radio" id="camera3" name="cameraFeeling" value="\uc0\u27604 \u36739 \u32039 \u24352 \u65292 \u38656 \u35201 \u32451 \u20064 ">\
+                                <label for="camera3">\uc0\u27604 \u36739 \u32039 \u24352 \u65292 \u38656 \u35201 \u32451 \u20064 </label>\
+                            </div>\
+                            <div class="radio-item">\
+                                <input type="radio" id="camera4" name="cameraFeeling" value="\uc0\u38750 \u24120 \u19981 \u20064 \u24815 ">\
+                                <label for="camera4">\uc0\u38750 \u24120 \u19981 \u20064 \u24815 </label>\
+                            </div>\
+                        </div>\
+                    </div>\
+\
+                    <div class="form-group">\
+                        <label>\uc0\u35821 \u35328 \u34920 \u36798 \u29305 \u28857 \u65288 \u21487 \u22810 \u36873 \u65289 </label>\
+                        <div class="checkbox-group">\
+                            <div class="checkbox-item">\
+                                <input type="checkbox" id="lang1" name="languageStyle" value="\uc0\u26222 \u36890 \u35805 \u26631 \u20934 ">\
+                                <label for="lang1">\uc0\u26222 \u36890 \u35805 \u26631 \u20934 </label>\
+                            </div>\
+                            <div class="checkbox-item">\
+                                <input type="checkbox" id="lang2" name="languageStyle" value="\uc0\u26377 \u26041 \u35328 \u29305 \u33394 ">\
+                                <label for="lang2">\uc0\u26377 \u26041 \u35328 \u29305 \u33394 </label>\
+                            </div>\
+                            <div class="checkbox-item">\
+                                <input type="checkbox" id="lang3" name="languageStyle" value="\uc0\u35821 \u36895 \u36739 \u24555 ">\
+                                <label for="lang3">\uc0\u35821 \u36895 \u36739 \u24555 </label>\
+                            </div>\
+                            <div class="checkbox-item">\
+                                <input type="checkbox" id="lang4" name="languageStyle" value="\uc0\u35821 \u36895 \u36739 \u24930 ">\
+                                <label for="lang4">\uc0\u35821 \u36895 \u36739 \u24930 </label>\
+                            </div>\
+                            <div class="checkbox-item">\
+                                <input type="checkbox" id="lang5" name="languageStyle" value="\uc0\u22768 \u38899 \u26377 \u29305 \u33394 ">\
+                                <label for="lang5">\uc0\u22768 \u38899 \u26377 \u29305 \u33394 </label>\
+                            </div>\
+                            <div class="checkbox-item">\
+                                <input type="checkbox" id="lang6" name="languageStyle" value="\uc0\u34920 \u36798 \u29983 \u21160 ">\
+                                <label for="lang6">\uc0\u34920 \u36798 \u29983 \u21160 </label>\
+                            </div>\
+                            <div class="checkbox-item">\
+                                <input type="checkbox" id="langOther" name="languageStyle" value="\uc0\u20854 \u20182 " onchange="toggleOtherInput('langOther', 'langOtherInput')">\
+                                <label for="langOther">\uc0\u20854 \u20182 </label>\
+                            </div>\
+                        </div>\
+                        <div class="other-input" id="langOtherInput">\
+                <input type="text" name="languageStyleOther" placeholder="\uc0\u35831 \u35828 \u26126 \u20854 \u20182 \u35821 \u35328 \u29305 \u28857 ..."> \
+</div> \
+</div>\
+                <div class="form-group">\
+                    <label for="catchphrase">\uc0\u26377 \u27809 \u26377 \u21475 \u22836 \u31109 \u25110 \u24120 \u29992 \u35821 \u65311 </label>\
+                    <input type="text" id="catchphrase" name="catchphrase" placeholder="\uc0\u20363 \u65306 \u27809 \u38382 \u39064 \u12289 \u25918 \u24515 \u21543 ...">\
+                </div>\
+            </div>\
+\
+            <!-- \uc0\u31532 \u20116 \u37096 \u20998 \u65306 \u21019 \u19994 \u25925 \u20107  -->\
+            <div class="section">\
+                <h2 class="section-title">
+\f1\b0 \uc0\u55357 \u56534 
+\f0\b  \uc0\u21019 \u19994 \u25925 \u20107 </h2>\
+                \
+                <div class="form-group">\
+                    <label for="whyStartBusiness">\uc0\u20026 \u20160 \u20040 \u20250 \u24320 \u36825 \u23478 \u24215 \u65311 \u26377 \u20160 \u20040 \u29305 \u27530 \u30340 \u22865 \u26426 \u21527 \u65311 </label>\
+                    <textarea id="whyStartBusiness" name="whyStartBusiness" placeholder="\uc0\u35831 \u20998 \u20139 \u24744 \u30340 \u21019 \u19994 \u25925 \u20107 ..."></textarea>\
+                </div>\
+\
+                <div class="form-group">\
+                    <label for="memorableEvent">\uc0\u21019 \u19994 \u36807 \u31243 \u20013 \u26368 \u38590 \u24536 \u30340 \u20107 \u24773 </label>\
+                    <textarea id="memorableEvent" name="memorableEvent" placeholder="\uc0\u35831 \u25551 \u36848 \u19968 \u20010 \u35753 \u24744 \u21360 \u35937 \u28145 \u21051 \u30340 \u32463 \u21382 ..."></textarea>\
+                </div>\
+\
+                <div class="form-group">\
+                    <label for="proudMoment">\uc0\u26368 \u26377 \u25104 \u23601 \u24863 \u30340 \u26102 \u21051 </label>\
+                    <textarea id="proudMoment" name="proudMoment" placeholder="\uc0\u35831 \u20998 \u20139 \u24744 \u26368 \u33258 \u35946 \u30340 \u26102 \u21051 ..."></textarea>\
+                </div>\
+\
+                <div class="form-group">\
+                    <label for="difficultTime">\uc0\u26368 \u22256 \u38590 \u30340 \u26102 \u20505 \u26159 \u24590 \u20040 \u22362 \u25345 \u19979 \u26469 \u30340 \u65311 </label>\
+                    <textarea id="difficultTime" name="difficultTime" placeholder="\uc0\u35831 \u20998 \u20139 \u24744 \u20811 \u26381 \u22256 \u38590 \u30340 \u32463 \u21382 ..."></textarea>\
+                </div>\
+\
+                <div class="form-group">\
+                    <label for="customerStory">\uc0\u26377 \u27809 \u26377 \u29305 \u21035 \u21360 \u35937 \u28145 \u21051 \u30340 \u23458 \u25143 \u65311 </label>\
+                    <textarea id="customerStory" name="customerStory" placeholder="\uc0\u35831 \u20998 \u20139 \u19968 \u20010 \u23458 \u25143 \u25925 \u20107 ..."></textarea>\
+                </div>\
+\
+                <div class="form-group">\
+                    <label for="familySupport">\uc0\u23478 \u20154 \u23545 \u24744 \u20107 \u19994 \u30340 \u24577 \u24230 </label>\
+                    <div class="radio-group">\
+                        <div class="radio-item">\
+                            <input type="radio" id="support1" name="familySupport" value="\uc0\u38750 \u24120 \u25903 \u25345 ">\
+                            <label for="support1">\uc0\u38750 \u24120 \u25903 \u25345 </label>\
+                        </div>\
+                        <div class="radio-item">\
+                            <input type="radio" id="support2" name="familySupport" value="\uc0\u19968 \u33324 \u25903 \u25345 ">\
+                            <label for="support2">\uc0\u19968 \u33324 \u25903 \u25345 </label>\
+                        </div>\
+                        <div class="radio-item">\
+                            <input type="radio" id="support3" name="familySupport" value="\uc0\u26377 \u20123 \u25285 \u24515 ">\
+                            <label for="support3">\uc0\u26377 \u20123 \u25285 \u24515 </label>\
+                        </div>\
+                        <div class="radio-item">\
+                            <input type="radio" id="support4" name="familySupport" value="\uc0\u19981 \u22826 \u25903 \u25345 ">\
+                            <label for="support4">\uc0\u19981 \u22826 \u25903 \u25345 </label>\
+                        </div>\
+                    </div>\
+                </div>\
+            </div>\
+\
+            <!-- \uc0\u31532 \u20845 \u37096 \u20998 \u65306 IP\u23450 \u20301 \u24847 \u21521  -->\
+            <div class="section">\
+                <h2 class="section-title">
+\f1\b0 \uc0\u55356 \u57263 
+\f0\b  IP\uc0\u23450 \u20301 \u24847 \u21521 </h2>\
+                \
+                <div class="form-group">\
+                    <label>\uc0\u24744 \u24076 \u26395 \u22312 \u25238 \u38899 \u19978 \u32473 \u22823 \u23478 \u20160 \u20040 \u21360 \u35937 \u65311 \u65288 \u21487 \u22810 \u36873 \u65289 </label>\
+                    <div class="checkbox-group">\
+                        <div class="checkbox-item">\
+                            <input type="checkbox" id="image1" name="desiredImage" value="\uc0\u19987 \u19994 \u30340 \u34892 \u19994 \u19987 \u23478 ">\
+                            <label for="image1">\uc0\u19987 \u19994 \u30340 \u34892 \u19994 \u19987 \u23478 </label>\
+                        </div>\
+                        <div class="checkbox-item">\
+                            <input type="checkbox" id="image2" name="desiredImage" value="\uc0\u20146 \u20999 \u30340 \u37051 \u23478 \u32769 \u26495 ">\
+                            <label for="image2">\uc0\u20146 \u20999 \u30340 \u37051 \u23478 \u32769 \u26495 </label>\
+                        </div>\
+                        <div class="checkbox-item">\
+                            <input type="checkbox" id="image3" name="desiredImage" value="\uc0\u26377 \u36259 \u30340 \u29983 \u27963 \u36798 \u20154 ">\
+                            <label for="image3">\uc0\u26377 \u36259 \u30340 \u29983 \u27963 \u36798 \u20154 </label>\
+                        </div>\
+                        <div class="checkbox-item">\
+                            <input type="checkbox" id="image4" name="desiredImage" value="\uc0\u21169 \u24535 \u30340 \u21019 \u19994 \u32773 ">\
+                            <label for="image4">\uc0\u21169 \u24535 \u30340 \u21019 \u19994 \u32773 </label>\
+                        </div>\
+                        <div class="checkbox-item">\
+                            <input type="checkbox" id="image5" name="desiredImage" value="\uc0\u28201 \u26262 \u30340 \u26381 \u21153 \u32773 ">\
+                            <label for="image5">\uc0\u28201 \u26262 \u30340 \u26381 \u21153 \u32773 </label>\
+                        </div>\
+                        <div class="checkbox-item">\
+                            <input type="checkbox" id="imageOther" name="desiredImage" value="\uc0\u20854 \u20182 " onchange="toggleOtherInput('imageOther', 'imageOtherInput')">\
+                            <label for="imageOther">\uc0\u20854 \u20182 </label>\
+                        </div>\
+                    </div>\
+                    <div class="other-input" id="imageOtherInput">\
+                        <input type="text" name="desiredImageOther" placeholder="\uc0\u35831 \u35828 \u26126 \u24744 \u24076 \u26395 \u30340 \u20854 \u20182 \u24418 \u35937 ...">\
+                    </div>\
+                </div>\
+\
+                <div class="form-group">\
+                    <label>\uc0\u26368 \u24819 \u20256 \u36882 \u32473 \u35266 \u20247 \u20160 \u20040 \u20215 \u20540 \u65311 </label>\
+                    <div class="radio-group">\
+                        <div class="radio-item">\
+                            <input type="radio" id="value1" name="valueToDeliver" value="\uc0\u19987 \u19994 \u30693 \u35782 ">\
+                            <label for="value1">\uc0\u19987 \u19994 \u30693 \u35782 </label>\
+                        </div>\
+                        <div class="radio-item">\
+                            <input type="radio" id="value2" name="valueToDeliver" value="\uc0\u29983 \u27963 \u24577 \u24230 ">\
+                            <label for="value2">\uc0\u29983 \u27963 \u24577 \u24230 </label>\
+                        </div>\
+                        <div class="radio-item">\
+                            <input type="radio" id="value3" name="valueToDeliver" value="\uc0\u21019 \u19994 \u31934 \u31070 ">\
+                            <label for="value3">\uc0\u21019 \u19994 \u31934 \u31070 </label>\
+                        </div>\
+                        <div class="radio-item">\
+                            <input type="radio" id="value4" name="valueToDeliver" value="\uc0\u26381 \u21153 \u29702 \u24565 ">\
+                            <label for="value4">\uc0\u26381 \u21153 \u29702 \u24565 </label>\
+                        </div>\
+                        <div class="radio-item">\
+                            <input type="radio" id="value5" name="valueToDeliver" value="\uc0\u20135 \u21697 \u21697 \u36136 ">\
+                            <label for="value5">\uc0\u20135 \u21697 \u21697 \u36136 </label>\
+                        </div>\
+                        <div class="radio-item">\
+                            <input type="radio" id="valueOther" name="valueToDeliver" value="\uc0\u20854 \u20182 " onchange="toggleOtherInput('valueOther', 'valueOtherInput')">\
+                            <label for="valueOther">\uc0\u20854 \u20182 </label>\
+                        </div>\
+                    </div>\
+                    <div class="other-input" id="valueOtherInput">\
+                        <input type="text" name="valueToDeliverOther" placeholder="\uc0\u35831 \u35828 \u26126 \u24744 \u24819 \u20256 \u36882 \u30340 \u20854 \u20182 \u20215 \u20540 ...">\
+                    </div>\
+                </div>\
+\
+                <div class="form-group">\
+                    <label>\uc0\u24744 \u26356 \u24895 \u24847 \u20998 \u20139 \u20160 \u20040 \u31867 \u22411 \u30340 \u20869 \u23481 \u65311 \u65288 \u21487 \u22810 \u36873 \u65289 </label>\
+                    <div class="checkbox-group">\
+                        <div class="checkbox-item">\
+                            <input type="checkbox" id="content1" name="contentPreference" value="\uc0\u24037 \u20316 \u26085 \u24120 ">\
+                            <label for="content1">\uc0\u24037 \u20316 \u26085 \u24120 </label>\
+                        </div>\
+                        <div class="checkbox-item">\
+                            <input type="checkbox" id="content2" name="contentPreference" value="\uc0\u20135 \u21697 \u21046 \u20316 \u36807 \u31243 ">\
+                            <label for="content2">\uc0\u20135 \u21697 \u21046 \u20316 \u36807 \u31243 </label>\
+                        </div>\
+                        <div class="checkbox-item">\
+                            <input type="checkbox" id="content3" name="contentPreference" value="\uc0\u32463 \u33829 \u24515 \u24471 ">\
+                            <label for="content3">\uc0\u32463 \u33829 \u24515 \u24471 </label>\
+                        </div>\
+                        <div class="checkbox-item">\
+                            <input type="checkbox" id="content4" name="contentPreference" value="\uc0\u29983 \u27963 \u24863 \u24735 ">\
+                            <label for="content4">\uc0\u29983 \u27963 \u24863 \u24735 </label>\
+                        </div>\
+                        <div class="checkbox-item">\
+                            <input type="checkbox" id="content5" name="contentPreference" value="\uc0\u23458 \u25143 \u20114 \u21160 ">\
+                            <label for="content5">\uc0\u23458 \u25143 \u20114 \u21160 </label>\
+                        </div>\
+                        <div class="checkbox-item">\
+                            <input type="checkbox" id="content6" name="contentPreference" value="\uc0\u34892 \u19994 \u30693 \u35782 ">\
+                            <label for="content6">\uc0\u34892 \u19994 \u30693 \u35782 </label>\
+                        </div>\
+                        <div class="checkbox-item">\
+                            <input type="checkbox" id="content7" name="contentPreference" value="\uc0\u23478 \u24237 \u29983 \u27963 ">\
+                            <label for="content7">\uc0\u23478 \u24237 \u29983 \u27963 </label>\
+                        </div>\
+                        <div class="checkbox-item">\
+                            <input type="checkbox" id="content8" name="contentPreference" value="\uc0\u20010 \u20154 \u29233 \u22909 ">\
+                            <label for="content8">\uc0\u20010 \u20154 \u29233 \u22909 </label>\
+                        </div>\
+                        <div class="checkbox-item">\
+                            <input type="checkbox" id="contentOther" name="contentPreference" value="\uc0\u20854 \u20182 " onchange="toggleOtherInput('contentOther', 'contentOtherInput')">\
+                            <label for="contentOther">\uc0\u20854 \u20182 </label>\
+                        </div>\
+                    </div>\
+                    <div class="other-input" id="contentOtherInput">\
+                        <input type="text" name="contentPreferenceOther" placeholder="\uc0\u35831 \u35828 \u26126 \u20854 \u20182 \u20869 \u23481 \u31867 \u22411 ...">\
+                    </div>\
+                </div>\
+\
+                <div class="form-group">\
+                    <label for="avoidContent">\uc0\u26377 \u20160 \u20040 \u32477 \u23545 \u19981 \u24895 \u24847 \u20998 \u20139 \u30340 \u65311 </label>\
+                    <textarea id="avoidContent" name="avoidContent" placeholder="\uc0\u35831 \u35828 \u26126 \u24744 \u19981 \u24076 \u26395 \u20998 \u20139 \u30340 \u20869 \u23481 \u31867 \u22411 ..."></textarea>\
+                </div>\
+            </div>\
+\
+            <!-- \uc0\u31532 \u19971 \u37096 \u20998 \u65306 \u21512 \u20316 \u26399 \u24453  -->\
+            <div class="section">\
+                <h2 class="section-title">
+\f1\b0 \uc0\u55358 \u56605 
+\f0\b  \uc0\u21512 \u20316 \u26399 \u24453 </h2>\
+                \
+                <div class="form-group">\
+                    <label>\uc0\u24076 \u26395 \u36890 \u36807 \u25238 \u38899 \u36816 \u33829 \u23454 \u29616 \u20160 \u20040 \u30446 \u26631 \u65311 </label>\
+                    <div class="radio-group">\
+                        <div class="radio-item">\
+                            <input type="radio" id="goal1" name="mainGoal" value="\uc0\u22686 \u21152 \u24215 \u38138 \u30693 \u21517 \u24230 ">\
+                            <label for="goal1">\uc0\u22686 \u21152 \u24215 \u38138 \u30693 \u21517 \u24230 </label>\
+                        </div>\
+                        <div class="radio-item">\
+                            <input type="radio" id="goal2" name="mainGoal" value="\uc0\u25552 \u21319 \u23458 \u27969 \u37327 ">\
+                            <label for="goal2">\uc0\u25552 \u21319 \u23458 \u27969 \u37327 </label>\
+                        </div>\
+                        <div class="radio-item">\
+                            <input type="radio" id="goal3" name="mainGoal" value="\uc0\u22686 \u21152 \u38144 \u21806 \u39069 ">\
+                            <label for="goal3">\uc0\u22686 \u21152 \u38144 \u21806 \u39069 </label>\
+                        </div>\
+                        <div class="radio-item">\
+                            <input type="radio" id="goal4" name="mainGoal" value="\uc0\u24314 \u31435 \u31169 \u22495 \u27969 \u37327 ">\
+                            <label for="goal4">\uc0\u24314 \u31435 \u31169 \u22495 \u27969 \u37327 </label>\
+                        </div>\
+                        <div class="radio-item">\
+                            <input type="radio" id="goal5" name="mainGoal" value="\uc0\u25171 \u36896 \u20010 \u20154 IP">\
+                            <label for="goal5">\uc0\u25171 \u36896 \u20010 \u20154 IP</label>\
+                        </div>\
+                    </div>\
+                </div>\
+\
+                <div class="form-group">\
+                    <label>\uc0\u26399 \u24453 \u30340 \u25928 \u26524 \u26102 \u38388 </label>\
+                    <div class="radio-group">\
+                        <div class="radio-item">\
+                            <input type="radio" id="time1" name="expectedTime" value="1\uc0\u20010 \u26376 \u20869 \u35265 \u25928 ">\
+                            <label for="time1">1\uc0\u20010 \u26376 \u20869 \u35265 \u25928 </label>\
+                        </div>\
+                        <div class="radio-item">\
+                            <input type="radio" id="time2" name="expectedTime" value="3\uc0\u20010 \u26376 \u20869 \u35265 \u25928 ">\
+                            <label for="time2">3\uc0\u20010 \u26376 \u20869 \u35265 \u25928 </label>\
+                        </div>\
+                        <div class="radio-item">\
+                            <input type="radio" id="time3" name="expectedTime" value="6\uc0\u20010 \u26376 \u20869 \u35265 \u25928 ">\
+                            <label for="time3">6\uc0\u20010 \u26376 \u20869 \u35265 \u25928 </label>\
+                        </div>\
+                        <div class="radio-item">\
+                            <input type="radio" id="time4" name="expectedTime" value="1\uc0\u24180 \u20869 \u35265 \u25928 ">\
+                            <label for="time4">1\uc0\u24180 \u20869 \u35265 \u25928 </label>\
+                        </div>\
+                    </div>\
+                </div>\
+\
+                <div class="form-group">\
+                    <label>\uc0\u21487 \u25509 \u21463 \u30340 \u25237 \u20837 \u39044 \u31639 \u65288 \u26376 \u65289 </label>\
+                    <div class="radio-group">\
+                        <div class="radio-item">\
+                            <input type="radio" id="budget1" name="budget" value="3000\uc0\u20803 \u20197 \u19979 ">\
+                            <label for="budget1">3000\uc0\u20803 \u20197 \u19979 </label>\
+                        </div>\
+                        <div class="radio-item">\
+                            <input type="radio" id="budget2" name="budget" value="3000-5000\uc0\u20803 ">\
+                            <label for="budget2">3000-5000\uc0\u20803 </label>\
+                        </div>\
+                        <div class="radio-item">\
+                            <input type="radio" id="budget3" name="budget" value="5000-8000\uc0\u20803 ">\
+                            <label for="budget3">5000-8000\uc0\u20803 </label>\
+                        </div>\
+                        <div class="radio-item">\
+                            <input type="radio" id="budget4" name="budget" value="8000-12000\uc0\u20803 ">\
+                            <label for="budget4">8000-12000\uc0\u20803 </label>\
+                        </div>\
+                        <div class="radio-item">\
+                            <input type="radio" id="budget5" name="budget" value="12000\uc0\u20803 \u20197 \u19978 ">\
+                            <label for="budget5">12000\uc0\u20803 \u20197 \u19978 </label>\
+                        </div>\
+                    </div>\
+                </div>\
+\
+                <div class="form-group">\
+                    <label>\uc0\u24744 \u33021 \u25237 \u20837 \u22810 \u23569 \u26102 \u38388 \u37197 \u21512 \u36816 \u33829 \u65311 </label>\
+                    <div class="radio-group">\
+                        <div class="radio-item">\
+                            <input type="radio" id="timeInvest1" name="timeInvestment" value="\uc0\u27599 \u22825 1\u23567 \u26102 \u20197 \u20869 ">\
+                            <label for="timeInvest1">\uc0\u27599 \u22825 1\u23567 \u26102 \u20197 \u20869 </label>\
+                        </div>\
+                        <div class="radio-item">\
+                            <input type="radio" id="timeInvest2" name="timeInvestment" value="\uc0\u27599 \u22825 1-2\u23567 \u26102 ">\
+                            <label for="timeInvest2">\uc0\u27599 \u22825 1-2\u23567 \u26102 </label>\
+                        </div>\
+                        <div class="radio-item">\
+                            <input type="radio" id="timeInvest3" name="timeInvestment" value="\uc0\u27599 \u22825 2-3\u23567 \u26102 ">\
+                            <label for="timeInvest3">\uc0\u27599 \u22825 2-3\u23567 \u26102 </label>\
+                        </div>\
+                        <div class="radio-item">\
+                            <input type="radio" id="timeInvest4" name="timeInvestment" value="\uc0\u30475 \u24773 \u20917 \u23433 \u25490 ">\
+                            <label for="timeInvest4">\uc0\u30475 \u24773 \u20917 \u23433 \u25490 </label>\
+                        </div>\
+                    </div>\
+                </div>\
+\
+                <div class="form-group">\
+                    <label>\uc0\u24895 \u24847 \u20986 \u38236 \u25293 \u25668 \u21527 \u65311 </label>\
+                    <div class="radio-group">\
+                        <div class="radio-item">\
+                            <input type="radio" id="appear1" name="appearanceWillingness" value="\uc0\u38750 \u24120 \u24895 \u24847 ">\
+                            <label for="appear1">\uc0\u38750 \u24120 \u24895 \u24847 </label>\
+                        </div>\
+                        <div class="radio-item">\
+                            <input type="radio" id="appear2" name="appearanceWillingness" value="\uc0\u21487 \u20197 \u23581 \u35797 ">\
+                            <label for="appear2">\uc0\u21487 \u20197 \u23581 \u35797 </label>\
+                        </div>\
+                        <div class="radio-item">\
+                            <input type="radio" id="appear3" name="appearanceWillingness" value="\uc0\u19981 \u22826 \u24895 \u24847 ">\
+                            <label for="appear3">\uc0\u19981 \u22826 \u24895 \u24847 </label>\
+                        </div>\
+                        <div class="radio-item">\
+                            <input type="radio" id="appear4" name="appearanceWillingness" value="\uc0\u22362 \u20915 \u19981 \u24895 \u24847 ">\
+                            <label for="appear4">\uc0\u22362 \u20915 \u19981 \u24895 \u24847 </label>\
+                        </div>\
+                    </div>\
+                </div>\
+\
+                <div class="form-group">\
+                    <label>\uc0\u24895 \u24847 \u22312 \u20197 \u19979 \u22330 \u26223 \u20986 \u38236 \u65288 \u21487 \u22810 \u36873 \u65289 </label>\
+                    <div class="checkbox-group">\
+                        <div class="checkbox-item">\
+                            <input type="checkbox" id="scene1" name="filmingScenes" value="\uc0\u24215 \u20869 \u24037 \u20316 ">\
+                            <label for="scene1">\uc0\u24215 \u20869 \u24037 \u20316 </label>\
+                        </div>\
+                        <div class="checkbox-item">\
+                            <input type="checkbox" id="scene2" name="filmingScenes" value="\uc0\u20135 \u21697 \u20171 \u32461 ">\
+                            <label for="scene2">\uc0\u20135 \u21697 \u20171 \u32461 </label>\
+                        </div>\
+                        <div class="checkbox-item">\
+                            <input type="checkbox" id="scene3" name="filmingScenes" value="\uc0\u23458 \u25143 \u26381 \u21153 ">\
+                            <label for="scene3">\uc0\u23458 \u25143 \u26381 \u21153 </label>\
+                        </div>\
+                        <div class="checkbox-item">\
+                            <input type="checkbox" id="scene4" name="filmingScenes" value="\uc0\u21046 \u20316 \u36807 \u31243 ">\
+                            <label for="scene4">\uc0\u21046 \u20316 \u36807 \u31243 </label>\
+                        </div>\
+                        <div class="checkbox-item">\
+                            <input type="checkbox" id="scene5" name="filmingScenes" value="\uc0\u26085 \u24120 \u29983 \u27963 ">\
+                            <label for="scene5">\uc0\u26085 \u24120 \u29983 \u27963 </label>\
+                        </div>\
+                        <div class="checkbox-item">\
+                            <input type="checkbox" id="scene6" name="filmingScenes" value="\uc0\u23398 \u20064 \u20998 \u20139 ">\
+                            <label for="scene6">\uc0\u23398 \u20064 \u20998 \u20139 </label>\
+                        </div>\
+                        <div class="checkbox-item">\
+                            <input type="checkbox" id="sceneOther" name="filmingScenes" value="\uc0\u20854 \u20182 " onchange="toggleOtherInput('sceneOther', 'sceneOtherInput')">\
+                            <label for="sceneOther">\uc0\u20854 \u20182 </label>\
+                        </div>\
+                    </div>\
+                    <div class="other-input" id="sceneOtherInput">\
+                        <input type="text" name="filmingScenesOther" placeholder="\uc0\u35831 \u35828 \u26126 \u20854 \u20182 \u25293 \u25668 \u22330 \u26223 ...">\
+                    </div>\
+                </div>\
+\
+                <div class="form-group">\
+                    <label for="weeklyFilmingTime">\uc0\u27599 \u21608 \u33021 \u37197 \u21512 \u25293 \u25668 \u30340 \u26102 \u38388 </label>\
+                    <div class="input-with-suffix">\
+                        <input type="number" id="weeklyFilmingTime" name="weeklyFilmingTime" min="1" max="50">\
+                        <span class="input-suffix">\uc0\u23567 \u26102 </span>\
+                    </div>\
+                </div>\
+            </div>\
+\
+            <!-- \uc0\u31532 \u20843 \u37096 \u20998 \u65306 \u20135 \u21697 \u26381 \u21153 \u29305 \u33394  -->\
+            <div class="section">\
+                <h2 class="section-title">
+\f1\b0 \uc0\u55357 \u57037 \u65039 
+\f0\b  \uc0\u20135 \u21697 /\u26381 \u21153 \u29305 \u33394 </h2>\
+                \
+                <div class="form-group">\
+                    <label for="mainProducts">\uc0\u35831 \u21015 \u20986 3-5\u20010 \u20027 \u25512 \u20135 \u21697 /\u26381 \u21153 </label>\
+                    <textarea id="mainProducts" name="mainProducts" placeholder="\uc0\u26684 \u24335 \u65306 \u20135 \u21697 \u21517 \u31216  - \u20215 \u26684  - \u21033 \u28070 \u29575 &#10;\u20363 \u22914 \u65306 \u25307 \u29260 \u22902 \u33590  - 15\u20803  - 60%&#10;&#10;1. &#10;2. &#10;3. &#10;4. &#10;5. "></textarea>\
+                </div>\
+\
+                <div class="form-group">\
+                    <label for="suitableProducts">\uc0\u21738 \u20123 \u20135 \u21697 \u26368 \u36866 \u21512 \u32447 \u19978 \u25512 \u24191 \u65311 \u20026 \u20160 \u20040 \u65311 </label>\
+                    <textarea id="suitableProducts" name="suitableProducts" placeholder="\uc0\u35831 \u35814 \u32454 \u35828 \u26126 \u20135 \u21697 \u29305 \u28857 \u21644 \u25512 \u24191 \u20248 \u21183 ..."></textarea>\
+                </div>\
+\
+                <div class="form-group">\
+                    <label for="uniqueStory">\uc0\u26377 \u20160 \u20040 \u29420 \u29305 \u30340 \u20135 \u21697 \u25925 \u20107 \u25110 \u21046 \u20316 \u24037 \u33402 \u21527 \u65311 </label>\
+                    <textarea id="uniqueStory" name="uniqueStory" placeholder="\uc0\u35831 \u20998 \u20139 \u24744 \u30340 \u20135 \u21697 \u29305 \u33394 \u12289 \u21046 \u20316 \u24037 \u33402 \u25110 \u32972 \u21518 \u30340 \u25925 \u20107 ..."></textarea>\
+                </div>\
+\
+                <div class="form-group">\
+                    <label for="marketingExperience">\uc0\u20043 \u21069 \u20570 \u36807 \u21738 \u20123 \u33829 \u38144 \u27963 \u21160 \u65311 \u25928 \u26524 \u22914 \u20309 \u65311 </label>\
+                    <textarea id="marketingExperience" name="marketingExperience" placeholder="\uc0\u35831 \u20998 \u20139 \u24744 \u30340 \u33829 \u38144 \u32463 \u39564 \u21644 \u25928 \u26524 ..."></textarea>\
+                </div>\
+\
+                <div class="form-group">\
+                    <label>\uc0\u24215 \u20869 \u26377 \u20160 \u20040 \u29305 \u33394 \u22330 \u26223 \u36866 \u21512 \u25293 \u25668 \u65311 \u65288 \u21487 \u22810 \u36873 \u65289 </label>\
+                    <div class="checkbox-group">\
+                        <div class="checkbox-item">\
+                            <input type="checkbox" id="shopScene1" name="shopScenes" value="\uc0\u21046 \u20316 \u36807 \u31243 ">\
+                            <label for="shopScene1">\uc0\u21046 \u20316 \u36807 \u31243 </label>\
+                        </div>\
+                        <div class="checkbox-item">\
+                            <input type="checkbox" id="shopScene2" name="shopScenes" value="\uc0\u29992 \u39184 \u29615 \u22659 ">\
+                            <label for="shopScene2">\uc0\u29992 \u39184 \u29615 \u22659 </label>\
+                        </div>\
+                        <div class="checkbox-item">\
+                            <input type="checkbox" id="shopScene3" name="shopScenes" value="\uc0\u20135 \u21697 \u23637 \u31034 ">\
+                            <label for="shopScene3">\uc0\u20135 \u21697 \u23637 \u31034 </label>\
+                        </div>\
+                        <div class="checkbox-item">\
+                            <input type="checkbox" id="shopScene4" name="shopScenes" value="\uc0\u26381 \u21153 \u22330 \u26223 ">\
+                            <label for="shopScene4">\uc0\u26381 \u21153 \u22330 \u26223 </label>\
+                        </div>\
+                        <div class="checkbox-item">\
+                            <input type="checkbox" id="shopScene5" name="shopScenes" value="\uc0\u35013 \u20462 \u29305 \u33394 ">\
+                            <label for="shopScene5">\uc0\u35013 \u20462 \u29305 \u33394 </label>\
+                        </div>\
+                        <div class="checkbox-item">\
+                            <input type="checkbox" id="shopScene6" name="shopScenes" value="\uc0\u22242 \u38431 \u21512 \u20316 ">\
+                            <label for="shopScene6">\uc0\u22242 \u38431 \u21512 \u20316 </label>\
+                        </div>\
+                        <div class="checkbox-item">\
+                            <input type="checkbox" id="shopSceneOther" name="shopScenes" value="\uc0\u20854 \u20182 " onchange="toggleOtherInput('shopSceneOther', 'shopSceneOtherInput')">\
+                            <label for="shopSceneOther">\uc0\u20854 \u20182 </label>\
+                        </div>\
+                    </div>\
+                    <div class="other-input" id="shopSceneOtherInput">\
+                        <input type="text" name="shopScenesOther" placeholder="\uc0\u35831 \u35828 \u26126 \u20854 \u20182 \u29305 \u33394 \u22330 \u26223 ...">\
+                    </div>\
+                </div>\
+            </div>\
+\
+            <!-- \uc0\u31532 \u20061 \u37096 \u20998 \u65306 \u21457 \u23637 \u30446 \u26631  -->\
+            <div class="section">\
+                <h2 class="section-title">
+\f1\b0 \uc0\u55356 \u57226 
+\f0\b  \uc0\u21457 \u23637 \u30446 \u26631 </h2>\
+                \
+                <div class="form-group">\
+                    <label for="shortTermGoals">3\uc0\u20010 \u26376 \u20869 \u24076 \u26395 \u36798 \u21040 \u30340 \u30446 \u26631 </label>\
+                    <textarea id="shortTermGoals" name="shortTermGoals" placeholder="\uc0\u35831 \u25551 \u36848 \u24744 \u30340 \u30701 \u26399 \u30446 \u26631 \u65292 \u22914 \u65306 &#10;- \u31881 \u19997 \u25968 \u37327 \u65306 1\u19975 &#10;- \u26376 \u22686 \u21152 \u23458 \u27969 \u65306 100\u20154 &#10;- \u26376 \u22686 \u21152 \u33829 \u19994 \u39069 \u65306 2\u19975 \u20803 &#10;- \u20854 \u20182 \u30446 \u26631 ..."></textarea>\
+                </div>\
+\
+                <div class="form-group">\
+                    <label for="longTermVision">\uc0\u29702 \u24819 \u20013 \u30340 \u20010 \u20154 IP\u29366 \u24577 \u65288 1\u24180 \u21518 \u65289 </label>\
+                    <textarea id="longTermVision" name="longTermVision" placeholder="\uc0\u35831 \u25551 \u36848 \u24744 \u24076 \u26395 \u36798 \u21040 \u30340 \u38271 \u26399 \u30446 \u26631 \u21644 \u24895 \u26223 ..."></textarea>\
+                </div>\
+\
+                <div class="form-group">\
+                    <label>\uc0\u24076 \u26395 \u36890 \u36807 \u20010 \u20154 IP\u23454 \u29616 \u20160 \u20040 \u65311 \u65288 \u21487 \u22810 \u36873 \u65289 </label>\
+                    <div class="checkbox-group">\
+                        <div class="checkbox-item">\
+                            <input type="checkbox" id="ipGoal1" name="ipGoals" value="\uc0\u24215 \u38138 \u29983 \u24847 \u26356 \u22909 ">\
+                            <label for="ipGoal1">\uc0\u24215 \u38138 \u29983 \u24847 \u26356 \u22909 </label>\
+                        </div>\
+                        <div class="checkbox-item">\
+                            <input type="checkbox" id="ipGoal2" name="ipGoals" value="\uc0\u20010 \u20154 \u24433 \u21709 \u21147 \u25552 \u21319 ">\
+                            <label for="ipGoal2">\uc0\u20010 \u20154 \u24433 \u21709 \u21147 \u25552 \u21319 </label>\
+                        </div>\
+                        <div class="checkbox-item">\
+                            <input type="checkbox" id="ipGoal3" name="ipGoals" value="\uc0\u25299 \u23637 \u26356 \u22810 \u21830 \u26426 ">\
+                            <label for="ipGoal3">\uc0\u25299 \u23637 \u26356 \u22810 \u21830 \u26426 </label>\
+                        </div>\
+                        <div class="checkbox-item">\
+                            <input type="checkbox" id="ipGoal4" name="ipGoals" value="\uc0\u24110 \u21161 \u26356 \u22810 \u21516 \u34892 ">\
+                            <label for="ipGoal4">\uc0\u24110 \u21161 \u26356 \u22810 \u21516 \u34892 </label>\
+                        </div>\
+                        <div class="checkbox-item">\
+                            <input type="checkbox" id="ipGoal5" name="ipGoals" value="\uc0\u25104 \u20026 \u34892 \u19994 \u19987 \u23478 ">\
+                            <label for="ipGoal5">\uc0\u25104 \u20026 \u34892 \u19994 \u19987 \u23478 </label>\
+                        </div>\
+                        <div class="checkbox-item">\
+                            <input type="checkbox" id="ipGoalOther" name="ipGoals" value="\uc0\u20854 \u20182 " onchange="toggleOtherInput('ipGoalOther', 'ipGoalOtherInput')">\
+                            <label for="ipGoalOther">\uc0\u20854 \u20182 </label>\
+                        </div>\
+                    </div>\
+                    <div class="other-input" id="ipGoalOtherInput">\
+                        <input type="text" name="ipGoalsOther" placeholder="\uc0\u35831 \u35828 \u26126 \u20854 \u20182 \u30446 \u26631 ...">\
+                    </div>\
+                </div>\
+\
+                <div class="form-group">\
+                    <label>\uc0\u26368 \u24076 \u26395 \u21738 \u31867 \u20154 \u20851 \u27880 \u24744 \u65311 \u65288 \u21487 \u22810 \u36873 \u65289 </label>\
+                    <div class="checkbox-group">\
+                        <div class="checkbox-item">\
+                            <input type="checkbox" id="audience1" name="targetAudience" value="\uc0\u28508 \u22312 \u23458 \u25143 ">\
+                            <label for="audience1">\uc0\u28508 \u22312 \u23458 \u25143 </label>\
+                        </div>\
+                        <div class="checkbox-item">\
+                            <input type="checkbox" id="audience2" name="targetAudience" value="\uc0\u21516 \u34892 \u19994 \u32773 ">\
+                            <label for="audience2">\uc0\u21516 \u34892 \u19994 \u32773 </label>\
+                        </div>\
+                        <div class="checkbox-item">\
+                            <input type="checkbox" id="audience3" name="targetAudience" value="\uc0\u26412 \u22320 \u23621 \u27665 ">\
+                            <label for="audience3">\uc0\u26412 \u22320 \u23621 \u27665 </label>\
+                        </div>\
+                        <div class="checkbox-item">\
+                            <input type="checkbox" id="audience4" name="targetAudience" value="\uc0\u20840 \u22269 \u32593 \u21451 ">\
+                            <label for="audience4">\uc0\u20840 \u22269 \u32593 \u21451 </label>\
+                        </div>\
+                        <div class="checkbox-item">\
+                            <input type="checkbox" id="audience5" name="targetAudience" value="\uc0\u24180 \u36731 \u21019 \u19994 \u32773 ">\
+                            <label for="audience5">\uc0\u24180 \u36731 \u21019 \u19994 \u32773 </label>\
+                        </div>\
+                        <div class="checkbox-item">\
+                            <input type="checkbox" id="audienceOther" name="targetAudience" value="\uc0\u20854 \u20182 " onchange="toggleOtherInput('audienceOther', 'audienceOtherInput')">\
+                            <label for="audienceOther">\uc0\u20854 \u20182 </label>\
+                        </div>\
+                    </div>\
+                    <div class="other-input" id="audienceOtherInput">\
+                        <input type="text" name="targetAudienceOther" placeholder="\uc0\u35831 \u35828 \u26126 \u20854 \u20182 \u30446 \u26631 \u21463 \u20247 ...">\
+                    </div>\
+                </div>\
+            </div>\
+\
+            <!-- \uc0\u31532 \u21313 \u37096 \u20998 \u65306 \u34917 \u20805 \u20449 \u24687  -->\
+            <div class="section">\
+                <h2 class="section-title">
+\f1\b0 \uc0\u55357 \u56493 
+\f0\b  \uc0\u34917 \u20805 \u20449 \u24687 </h2>\
+                \
+                <div class="form-group">\
+                    <label for="additionalInfo">\uc0\u36824 \u26377 \u20160 \u20040 \u24819 \u35753 \u25105 \u20204 \u20102 \u35299 \u30340 \u20010 \u20154 \u29305 \u33394 \u65311 </label>\
+                    <textarea id="additionalInfo" name="additionalInfo" placeholder="\uc0\u35831 \u34917 \u20805 \u20219 \u20309 \u24744 \u35748 \u20026 \u37325 \u35201 \u30340 \u20449 \u24687 ..."></textarea>\
+                </div>\
+\
+                <div class="form-group">\
+                    <label for="concerns">\uc0\u23545 \u20010 \u20154 IP\u25171 \u36896 \u26377 \u20160 \u20040 \u25285 \u24515 \u25110 \u39038 \u34385 \u65311 </label>\
+                    <textarea id="concerns" name="concerns" placeholder="\uc0\u35831 \u22374 \u35802 \u20998 \u20139 \u24744 \u30340 \u39038 \u34385 \u65292 \u25105 \u20204 \u20250 \u38024 \u23545 \u24615 \u22320 \u35299 \u20915 ..."></textarea>\
+                </div>\
+\
+                <div class="form-group">\
+                    <label for="specialRequirements">\uc0\u24076 \u26395 \u25105 \u20204 \u22312 IP\u25171 \u36896 \u36807 \u31243 \u20013 \u29305 \u21035 \u27880 \u24847 \u20160 \u20040 \u65311 </label>\
+                    <textarea id="specialRequirements" name="specialRequirements" placeholder="\uc0\u35831 \u35828 \u26126 \u24744 \u30340 \u29305 \u27530 \u35201 \u27714 \u25110 \u27880 \u24847 \u20107 \u39033 ..."></textarea>\
+                </div>\
+\
+                <div class="form-group">\
+                    <label for="expectations">\uc0\u23545 \u36825 \u27425 \u21512 \u20316 \u26377 \u20160 \u20040 \u26399 \u24453 \u65311 </label>\
+<textarea id="expectations" name="expectations" placeholder="\uc0\u35831 \u20998 \u20139 \u24744 \u23545 \u21512 \u20316 \u30340 \u26399 \u24453 \u21644 \u24819 \u27861 ..."></textarea>\
+</div>\
+                <div class="form-group">\
+                    <label>\uc0\u24744 \u30446 \u21069 \u20351 \u29992 \u30340 \u31038 \u20132 \u23186 \u20307 \u24179 \u21488 \u65288 \u21487 \u22810 \u36873 \u65289 </label>\
+                    <div class="checkbox-group">\
+                        <div class="checkbox-item">\
+                            <input type="checkbox" id="social1" name="socialPlatforms" value="\uc0\u24494 \u20449 \u26379 \u21451 \u22280 ">\
+                            <label for="social1">\uc0\u24494 \u20449 \u26379 \u21451 \u22280 </label>\
+                        </div>\
+                        <div class="checkbox-item">\
+                            <input type="checkbox" id="social2" name="socialPlatforms" value="\uc0\u25238 \u38899 ">\
+                            <label for="social2">\uc0\u25238 \u38899 </label>\
+                        </div>\
+                        <div class="checkbox-item">\
+                            <input type="checkbox" id="social3" name="socialPlatforms" value="\uc0\u24555 \u25163 ">\
+                            <label for="social3">\uc0\u24555 \u25163 </label>\
+                        </div>\
+                        <div class="checkbox-item">\
+                            <input type="checkbox" id="social4" name="socialPlatforms" value="\uc0\u23567 \u32418 \u20070 ">\
+                            <label for="social4">\uc0\u23567 \u32418 \u20070 </label>\
+                        </div>\
+                        <div class="checkbox-item">\
+                            <input type="checkbox" id="social5" name="socialPlatforms" value="\uc0\u24494 \u21338 ">\
+                            <label for="social5">\uc0\u24494 \u21338 </label>\
+                        </div>\
+                        <div class="checkbox-item">\
+                            <input type="checkbox" id="social6" name="socialPlatforms" value="\uc0\u35270 \u39057 \u21495 ">\
+                            <label for="social6">\uc0\u35270 \u39057 \u21495 </label>\
+                        </div>\
+                        <div class="checkbox-item">\
+                            <input type="checkbox" id="socialOther" name="socialPlatforms" value="\uc0\u20854 \u20182 " onchange="toggleOtherInput('socialOther', 'socialOtherInput')">\
+                            <label for="socialOther">\uc0\u20854 \u20182 </label>\
+                        </div>\
+                    </div>\
+                    <div class="other-input" id="socialOtherInput">\
+                        <input type="text" name="socialPlatformsOther" placeholder="\uc0\u35831 \u35828 \u26126 \u20854 \u20182 \u24179 \u21488 ...">\
+                    </div>\
+                </div>\
+\
+                <div class="form-group">\
+                    <label for="socialMediaUsage">\uc0\u26379 \u21451 \u22280 \u20027 \u35201 \u21457 \u20160 \u20040 \u20869 \u23481 \u65311 </label>\
+                    <textarea id="socialMediaUsage" name="socialMediaUsage" placeholder="\uc0\u35831 \u25551 \u36848 \u24744 \u24179 \u26102 \u22312 \u26379 \u21451 \u22280 \u20998 \u20139 \u30340 \u20869 \u23481 \u31867 \u22411 ..."></textarea>\
+                </div>\
+            </div>\
+\
+            <button type="submit" class="submit-btn" id="submitBtn">\
+                
+\f1\b0 \uc0\u55357 \u56960 
+\f0\b  \uc0\u25552 \u20132 \u35843 \u30740 \u34920 \u24182 \u29983 \u25104 \u25253 \u21578 \
+            </button>\
+        </form>\
+\
+        <!-- \uc0\u21152 \u36733 \u29366 \u24577  -->\
+        <div class="loading" id="loading">\
+            <div class="loading-spinner"></div>\
+            <h3>\uc0\u27491 \u22312 \u29983 \u25104 \u24744 \u30340 \u19987 \u23646 \u25253 \u21578 ...</h3>\
+            <p>\uc0\u35831 \u31245 \u20505 \u65292 \u25105 \u20204 \u27491 \u22312 \u20998 \u26512 \u24744 \u30340 \u20449 \u24687 \u24182 \u21046 \u20316 Excel\u25253 \u21578 </p>\
+        </div>\
+\
+        <!-- \uc0\u25104 \u21151 \u29366 \u24577  -->\
+        <div class="success-message" id="successMessage">\
+            <h2>
+\f1\b0 \uc0\u55356 \u57225 
+\f0\b  \uc0\u25253 \u21578 \u29983 \u25104 \u25104 \u21151 \u65281 </h2>\
+            <p>\uc0\u24744 \u30340 \u19987 \u23646 \u35843 \u30740 \u25253 \u21578 \u24050 \u32463 \u29983 \u25104 \u23436 \u25104 </p>\
+            <a href="#" class="download-btn excel" id="downloadExcelBtn">
+\f1\b0 \uc0\u55357 \u56522 
+\f0\b  \uc0\u19979 \u36733 Excel\u25253 \u21578 </a>\
+            <p style="margin-top: 20px; color: #666;">\
+                \uc0\u25105 \u20204 \u20250 \u22312 2\u20010 \u24037 \u20316 \u26085 \u20869 \u19982 \u24744 \u32852 \u31995 \u65292 \u35752 \u35770 \u20855 \u20307 \u30340 \u21512 \u20316 \u26041 \u26696 \
+            </p>\
+        </div>\
+    </div>\
+</div>\
+\
+<!-- \uc0\u24341 \u20837 Excel\u29983 \u25104 \u24211  -->\
+<script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>\
+\
+<script>\
+    // \uc0\u20854 \u20182 \u36873 \u39033 \u20999 \u25442 \u21151 \u33021 \
+    function toggleOtherInput(checkboxId, inputId) \{\
+        const checkbox = document.getElementById(checkboxId);\
+        const input = document.getElementById(inputId);\
+        \
+        if (checkbox.checked) \{\
+            input.classList.add('show');\
+        \} else \{\
+            input.classList.remove('show');\
+            const textInput = input.querySelector('input[type="text"]');\
+            if (textInput) \{\
+                textInput.value = '';\
+            \}\
+        \}\
+    \}\
+\
+    // \uc0\u36827 \u24230 \u26465 \u26356 \u26032 \
+    function updateProgress() \{\
+        const form = document.getElementById('surveyForm');\
+        const inputs = form.querySelectorAll('input[required], select[required], textarea[required]');\
+        const filledInputs = Array.from(inputs).filter(input => \{\
+            if (input.type === 'radio') \{\
+                return form.querySelector(`input[name="$\{input.name\}"]:checked`);\
+            \}\
+            return input.value.trim() !== '';\
+        \});\
+        \
+        const progress = (filledInputs.length / inputs.length) * 100;\
+        document.getElementById('progressFill').style.width = progress + '%';\
+    \}\
+\
+    // \uc0\u30417 \u21548 \u34920 \u21333 \u21464 \u21270 \
+    document.getElementById('surveyForm').addEventListener('input', updateProgress);\
+    document.getElementById('surveyForm').addEventListener('change', updateProgress);\
+\
+    // \uc0\u34920 \u21333 \u25552 \u20132 \u22788 \u29702 \
+    document.getElementById('surveyForm').addEventListener('submit', function(e) \{\
+        e.preventDefault();\
+        \
+        // \uc0\u26174 \u31034 \u21152 \u36733 \u29366 \u24577 \
+        document.getElementById('surveyForm').style.display = 'none';\
+        document.getElementById('loading').style.display = 'block';\
+        \
+        // \uc0\u25910 \u38598 \u34920 \u21333 \u25968 \u25454 \
+        const formData = new FormData(this);\
+        const data = \{\};\
+        \
+        // \uc0\u22788 \u29702 \u21333 \u36873 \u21644 \u25991 \u26412 \u36755 \u20837 \
+        for (let [key, value] of formData.entries()) \{\
+            if (data[key]) \{\
+                if (Array.isArray(data[key])) \{\
+                    data[key].push(value);\
+                \} else \{\
+                    data[key] = [data[key], value];\
+                \}\
+            \} else \{\
+                data[key] = value;\
+            \}\
+        \}\
+        \
+        // \uc0\u22788 \u29702 \u22810 \u36873 \u26694 \
+        const checkboxGroups = [\
+            'customerAge', 'advantages', 'personality', 'hobbies', 'languageStyle',\
+            'desiredImage', 'contentPreference', 'filmingScenes', 'shopScenes',\
+            'ipGoals', 'targetAudience', 'socialPlatforms'\
+        ];\
+        checkboxGroups.forEach(group => \{\
+            const checkboxes = document.querySelectorAll(`input[name="$\{group\}"]:checked`);\
+            data[group] = Array.from(checkboxes).map(cb => cb.value);\
+        \});\
+\
+        // \uc0\u22788 \u29702 "\u20854 \u20182 "\u36873 \u39033 \u30340 \u25991 \u26412 \u36755 \u20837 \
+        const otherInputs = \{\
+            'customerAgeOther': 'customerAge',\
+            'advantagesOther': 'advantages',\
+            'personalityOther': 'personality',\
+            'hobbiesOther': 'hobbies',\
+            'languageStyleOther': 'languageStyle',\
+            'desiredImageOther': 'desiredImage',\
+            'valueToDeliverOther': 'valueToDeliver',\
+            'contentPreferenceOther': 'contentPreference',\
+            'filmingScenesOther': 'filmingScenes',\
+            'shopScenesOther': 'shopScenes',\
+            'ipGoalsOther': 'ipGoals',\
+            'targetAudienceOther': 'targetAudience',\
+            'socialPlatformsOther': 'socialPlatforms'\
+        \};\
+\
+        Object.keys(otherInputs).forEach(otherKey => \{\
+            if (data[otherKey] && data[otherKey].trim()) \{\
+                const mainKey = otherInputs[otherKey];\
+                if (Array.isArray(data[mainKey])) \{\
+                    // \uc0\u26367 \u25442 "\u20854 \u20182 "\u20026 \u20855 \u20307 \u20869 \u23481 \
+                    const otherIndex = data[mainKey].indexOf('\uc0\u20854 \u20182 ');\
+                    if (otherIndex !== -1) \{\
+                        data[mainKey][otherIndex] = data[otherKey];\
+                    \}\
+                \} else if (data[mainKey] === '\uc0\u20854 \u20182 ') \{\
+                    data[mainKey] = data[otherKey];\
+                \}\
+            \}\
+        \});\
+        \
+        // \uc0\u27169 \u25311 \u22788 \u29702 \u26102 \u38388 \
+        setTimeout(() => \{\
+            generateExcelReport(data);\
+        \}, 3000);\
+    \});\
+\
+    // \uc0\u29983 \u25104 Excel\u25253 \u21578 \
+    function generateExcelReport(data) \{\
+        // \uc0\u21019 \u24314 \u24037 \u20316 \u31807 \
+        const wb = XLSX.utils.book_new();\
+        \
+        // \uc0\u21019 \u24314 \u22522 \u26412 \u20449 \u24687 \u24037 \u20316 \u34920 \
+        const basicInfoData = [\
+            ['\uc0\u39033 \u30446 ', '\u20869 \u23481 '],\
+            ['\uc0\u24215 \u38138 \u21517 \u31216 ', data.shopName || ''],\
+            ['\uc0\u20027 \u33829 \u19994 \u21153 ', data.business || ''],\
+            ['\uc0\u24215 \u38138 \u22320 \u22336 ', data.address || ''],\
+            ['\uc0\u33829 \u19994 \u38754 \u31215 ', data.area ? `$\{data.area\}\u24179 \u26041 \u31859 ` : ''],\
+            ['\uc0\u24320 \u24215 \u26102 \u38388 ', data.openTime || ''],\
+            ['\uc0\u21592 \u24037 \u20154 \u25968 ', data.staffCount ? `$\{data.staffCount\}\u20154 ` : ''],\
+            ['\uc0\u32852 \u31995 \u20154 \u22995 \u21517 ', data.contactName || ''],\
+            ['\uc0\u32844 \u20301 ', data.position || ''],\
+            ['\uc0\u32852 \u31995 \u30005 \u35805 ', data.phone || ''],\
+            ['\uc0\u24494 \u20449 \u21495 ', data.wechat || ''],\
+            ['', ''],\
+            ['\uc0\u32463 \u33829 \u29616 \u29366 ', ''],\
+            ['\uc0\u26376 \u33829 \u19994 \u39069 ', data.revenue || ''],\
+            ['\uc0\u24179 \u22343 \u23458 \u21333 \u20215 ', data.avgPrice ? `$\{data.avgPrice\}\u20803 ` : ''],\
+            ['\uc0\u20027 \u35201 \u23458 \u25143 \u32676 \u20307 ', Array.isArray(data.customerAge) ? data.customerAge.join('\u12289 ') : ''],\
+            ['\uc0\u31454 \u20105 \u20248 \u21183 ', Array.isArray(data.advantages) ? data.advantages.join('\u12289 ') : ''],\
+            ['\uc0\u20027 \u35201 \u22256 \u38590 ', data.challenges || '']\
+        ];\
+        \
+        const ws1 = XLSX.utils.aoa_to_sheet(basicInfoData);\
+        XLSX.utils.book_append_sheet(wb, ws1, '\uc0\u24215 \u38138 \u22522 \u26412 \u20449 \u24687 ');\
+\
+        // \uc0\u21019 \u24314 \u20010 \u20154 IP\u20449 \u24687 \u24037 \u20316 \u34920 \
+        const personalInfoData = [\
+            ['\uc0\u39033 \u30446 ', '\u20869 \u23481 '],\
+            ['\uc0\u24180 \u40836 ', data.age ? `$\{data.age\}\u23681 ` : ''],\
+            ['\uc0\u24615 \u21035 ', data.gender || ''],\
+            ['\uc0\u23398 \u21382 ', data.education || ''],\
+            ['\uc0\u31821 \u36143 ', data.hometown || ''],\
+            ['\uc0\u22312 \u26412 \u22320 \u29983 \u27963 \u26102 \u38388 ', data.localTime ? `$\{data.localTime\}\u24180 ` : ''],\
+            ['\uc0\u24320 \u24215 \u26102 \u38271 ', data.shopDuration ? `$\{data.shopDuration\}\u24180 ` : ''],\
+            ['\uc0\u20043 \u21069 \u24037 \u20316 \u32463 \u21382 ', data.previousWork || ''],\
+            ['\uc0\u36873 \u25321 \u34892 \u19994 \u21407 \u22240 ', data.whyThisBusiness || ''],\
+            ['', ''],\
+            ['\uc0\u24615 \u26684 \u29305 \u28857 ', ''],\
+            ['\uc0\u26379 \u21451 \u35780 \u20215 ', Array.isArray(data.personality) ? data.personality.join('\u12289 ') : ''],\
+            ['\uc0\u20010 \u20154 \u29305 \u28857 ', data.uniqueTrait || ''],\
+            ['\uc0\u29233 \u22909 \u25216 \u33021 ', Array.isArray(data.hobbies) ? data.hobbies.join('\u12289 ') : ''],\
+            ['\uc0\u38236 \u22836 \u24863 \u21463 ', data.cameraFeeling || ''],\
+            ['\uc0\u35821 \u35328 \u29305 \u28857 ', Array.isArray(data.languageStyle) ? data.languageStyle.join('\u12289 ') : ''],\
+            ['\uc0\u21475 \u22836 \u31109 ', data.catchphrase || '']\
+        ];\
+        \
+        const ws2 = XLSX.utils.aoa_to_sheet(personalInfoData);\
+        XLSX.utils.book_append_sheet(wb, ws2, '\uc0\u20010 \u20154 IP\u20449 \u24687 ');\
+\
+        // \uc0\u21019 \u24314 \u21019 \u19994 \u25925 \u20107 \u24037 \u20316 \u34920 \
+        const storyData = [\
+            ['\uc0\u39033 \u30446 ', '\u20869 \u23481 '],\
+            ['\uc0\u21019 \u19994 \u21021 \u34935 ', data.whyStartBusiness || ''],\
+            ['\uc0\u38590 \u24536 \u32463 \u21382 ', data.memorableEvent || ''],\
+            ['\uc0\u25104 \u23601 \u26102 \u21051 ', data.proudMoment || ''],\
+            ['\uc0\u22256 \u38590 \u22362 \u25345 ', data.difficultTime || ''],\
+            ['\uc0\u23458 \u25143 \u25925 \u20107 ', data.customerStory || ''],\
+            ['\uc0\u23478 \u20154 \u24577 \u24230 ', data.familySupport || '']\
+        ];\
+        \
+        const ws3 = XLSX.utils.aoa_to_sheet(storyData);\
+        XLSX.utils.book_append_sheet(wb, ws3, '\uc0\u21019 \u19994 \u25925 \u20107 ');\
+\
+        // \uc0\u21019 \u24314 IP\u23450 \u20301 \u24037 \u20316 \u34920 \
+        const ipPositioningData = [\
+            ['\uc0\u39033 \u30446 ', '\u20869 \u23481 '],\
+            ['\uc0\u26399 \u26395 \u24418 \u35937 ', Array.isArray(data.desiredImage) ? data.desiredImage.join('\u12289 ') : ''],\
+            ['\uc0\u20215 \u20540 \u20256 \u36882 ', data.valueToDeliver || ''],\
+            ['\uc0\u20869 \u23481 \u20559 \u22909 ', Array.isArray(data.contentPreference) ? data.contentPreference.join('\u12289 ') : ''],\
+            ['\uc0\u36991 \u20813 \u20869 \u23481 ', data.avoidContent || ''],\
+            ['\uc0\u25293 \u25668 \u22330 \u26223 ', Array.isArray(data.filmingScenes) ? data.filmingScenes.join('\u12289 ') : '']\
+        ];\
+        \
+        const ws4 = XLSX.utils.aoa_to_sheet(ipPositioningData);\
+        XLSX.utils.book_append_sheet(wb, ws4, 'IP\uc0\u23450 \u20301 \u24314 \u35758 ');\
+\
+        // \uc0\u21019 \u24314 \u21512 \u20316 \u26041 \u26696 \u24037 \u20316 \u34920 \
+        const cooperationData = [\
+            ['\uc0\u39033 \u30446 ', '\u20869 \u23481 '],\
+            ['\uc0\u20027 \u35201 \u30446 \u26631 ', data.mainGoal || ''],\
+            ['\uc0\u26399 \u26395 \u26102 \u38388 ', data.expectedTime || ''],\
+            ['\uc0\u25237 \u20837 \u39044 \u31639 ', data.budget || ''],\
+            ['\uc0\u26102 \u38388 \u37197 \u21512 ', data.timeInvestment || ''],\
+            ['\uc0\u20986 \u38236 \u24847 \u24895 ', data.appearanceWillingness || ''],\
+            ['\uc0\u25293 \u25668 \u26102 \u38388 ', data.weeklyFilmingTime ? `\u27599 \u21608 $\{data.weeklyFilmingTime\}\u23567 \u26102 ` : '']\
+        ];\
+        \
+        const ws5 = XLSX.utils.aoa_to_sheet(cooperationData);\
+        XLSX.utils.book_append_sheet(wb, ws5, '\uc0\u21512 \u20316 \u26041 \u26696 ');\
+\
+        // \uc0\u21019 \u24314 \u20135 \u21697 \u29305 \u33394 \u24037 \u20316 \u34920 \
+        const productData = [\
+            ['\uc0\u39033 \u30446 ', '\u20869 \u23481 '],\
+            ['\uc0\u20027 \u25512 \u20135 \u21697 ', data.mainProducts || ''],\
+            ['\uc0\u25512 \u24191 \u20248 \u21183 ', data.suitableProducts || ''],\
+            ['\uc0\u29420 \u29305 \u25925 \u20107 ', data.uniqueStory || ''],\
+            ['\uc0\u33829 \u38144 \u32463 \u39564 ', data.marketingExperience || ''],\
+            ['\uc0\u25293 \u25668 \u22330 \u26223 ', Array.isArray(data.shopScenes) ? data.shopScenes.join('\u12289 ') : '']\
+        ];\
+        \
+        const ws6 = XLSX.utils.aoa_to_sheet(productData);\
+        XLSX.utils.book_append_sheet(wb, ws6, '\uc0\u20135 \u21697 \u26381 \u21153 \u29305 \u33394 ');\
+\
+        // \uc0\u21019 \u24314 \u21457 \u23637 \u35268 \u21010 \u24037 \u20316 \u34920 \
+        const developmentData = [\
+            ['\uc0\u39033 \u30446 ', '\u20869 \u23481 '],\
+            ['\uc0\u30701 \u26399 \u30446 \u26631 \u65288 3\u20010 \u26376 \u65289 ', data.shortTermGoals || ''],\
+            ['\uc0\u38271 \u26399 \u24895 \u26223 \u65288 1\u24180 \u65289 ', data.longTermVision || ''],\
+            ['IP\uc0\u30446 \u26631 ', Array.isArray(data.ipGoals) ? data.ipGoals.join('\u12289 ') : ''],\
+            ['\uc0\u30446 \u26631 \u21463 \u20247 ', Array.isArray(data.targetAudience) ? data.targetAudience.join('\u12289 ') : '']\
+        ];\
+        \
+        const ws7 = XLSX.utils.aoa_to_sheet(developmentData);\
+        XLSX.utils.book_append_sheet(wb, ws7, '\uc0\u21457 \u23637 \u35268 \u21010 ');\
+\
+        // \uc0\u21019 \u24314 \u34917 \u20805 \u20449 \u24687 \u24037 \u20316 \u34920 \
+        const additionalData = [\
+            ['\uc0\u39033 \u30446 ', '\u20869 \u23481 '],\
+            ['\uc0\u20010 \u20154 \u29305 \u33394 ', data.additionalInfo || ''],\
+            ['\uc0\u25285 \u24515 \u39038 \u34385 ', data.concerns || ''],\
+            ['\uc0\u29305 \u27530 \u35201 \u27714 ', data.specialRequirements || ''],\
+            ['\uc0\u21512 \u20316 \u26399 \u24453 ', data.expectations || ''],\
+            ['\uc0\u20351 \u29992 \u24179 \u21488 ', Array.isArray(data.socialPlatforms) ? data.socialPlatforms.join('\u12289 ') : ''],\
+            ['\uc0\u26379 \u21451 \u22280 \u20869 \u23481 ', data.socialMediaUsage || '']\
+        ];\
+        \
+        const ws8 = XLSX.utils.aoa_to_sheet(additionalData);\
+        XLSX.utils.book_append_sheet(wb, ws8, '\uc0\u34917 \u20805 \u20449 \u24687 ');\
+\
+        // \uc0\u21019 \u24314 \u34892 \u21160 \u35745 \u21010 \u24037 \u20316 \u34920 \
+        const actionPlanData = [\
+            ['\uc0\u38454 \u27573 ', '\u20869 \u23481 ', '\u26102 \u38388 '],\
+            ['1. \uc0\u28145 \u24230 \u27807 \u36890 ', '2\u20010 \u24037 \u20316 \u26085 \u20869 \u35814 \u35848 ', '\u31614 \u32422 \u21069 '],\
+            ['2. \uc0\u26041 \u26696 \u21046 \u23450 ', '\u26681 \u25454 \u35843 \u30740 \u32467 \u26524 \u23450 \u21046 \u19987 \u23646 \u26041 \u26696 ', '\u31614 \u32422 \u21518 3-5\u22825 '],\
+            ['3. \uc0\u20869 \u23481 \u31574 \u21010 ', '\u21046 \u23450 \u39318 \u26376 \u20869 \u23481 \u35745 \u21010 ', '\u31614 \u32422 \u21518 1\u21608 '],\
+            ['4. \uc0\u27491 \u24335 \u21551 \u21160 ', '\u24320 \u22987 \u24215 \u38138 \u36816 \u33829 +IP\u25171 \u36896 ', '\u31614 \u32422 \u21518 15\u20010 \u24037 \u20316 \u26085 '],\
+            ['', '', ''],\
+            ['\uc0\u39044 \u35745 \u21551 \u21160 \u26102 \u38388 ', '\u31614 \u32422 \u21518 15\u20010 \u24037 \u20316 \u26085 ', ''],\
+            ['\uc0\u39318 \u27425 \u25928 \u26524 \u35780 \u20272 ', '\u21512 \u20316 \u24320 \u22987 \u21518 30\u22825 ', ''],\
+            ['', '', ''],\
+            ['\uc0\u32852 \u31995 \u26041 \u24335 ', '', ''],\
+            ['\uc0\u20844 \u21496 \u21517 \u31216 ', '\u31505 \u26524 \u25991 \u21270 ', ''],\
+            ['\uc0\u32852 \u31995 \u30005 \u35805 ', '400-123-4567', ''],\
+            ['\uc0\u24494 \u20449 \u21495 ', 'xiaoguo_culture', ''],\
+            ['\uc0\u29983 \u25104 \u26085 \u26399 ', new Date().toLocaleDateString(), '']\
+        ];\
+        \
+        const ws9 = XLSX.utils.aoa_to_sheet(actionPlanData);\
+        XLSX.utils.book_append_sheet(wb, ws9, '\uc0\u19979 \u19968 \u27493 \u34892 \u21160 \u35745 \u21010 ');\
+\
+        // \uc0\u35774 \u32622 \u21015 \u23485 \
+        const sheets = [ws1, ws2, ws3, ws4, ws5, ws6, ws7, ws8, ws9];\
+        sheets.forEach(ws => \{\
+            ws['!cols'] = [\
+                \{ width: 20 \},  // \uc0\u31532 \u19968 \u21015 \
+                \{ width: 50 \},  // \uc0\u31532 \u20108 \u21015 \
+                \{ width: 20 \}   // \uc0\u31532 \u19977 \u21015 \
+            ];\
+        \});\
+\
+        // \uc0\u29983 \u25104 \u24182 \u19979 \u36733 Excel\u25991 \u20214 \
+        const fileName = `$\{data.shopName || '\uc0\u23454 \u20307 \u24215 '\}_\u25238 \u38899 \u20195 \u36816 \u33829 \u35843 \u30740 \u25253 \u21578 _$\{new Date().toISOString().slice(0,10)\}.xlsx`;\
+        \
+        // \uc0\u26174 \u31034 \u25104 \u21151 \u28040 \u24687 \
+        document.getElementById('loading').style.display = 'none';\
+        document.getElementById('successMessage').style.display = 'block';\
+        \
+// \uc0\u35774 \u32622 \u19979 \u36733 \u25353 \u38062 \
+document.getElementById('downloadExcelBtn').addEventListener('click', function(e) \{\
+    e.preventDefault();\
+    try \{\
+        XLSX.writeFile(wb, fileName);\
+        console.log('Excel\uc0\u25991 \u20214 \u19979 \u36733 \u25104 \u21151 ');\
+    \} catch (error) \{\
+        console.error('\uc0\u19979 \u36733 \u22833 \u36133 :', error);\
+        alert('\uc0\u19979 \u36733 \u22833 \u36133 \u65292 \u35831 \u37325 \u35797 ');\
+    \}\
+\});\
+    \}\
+\
+    // \uc0\u21021 \u22987 \u21270 \u36827 \u24230 \u26465 \
+    updateProgress();\
+</script>\
+</body> </html>\
+}
